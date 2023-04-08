@@ -1,0 +1,11 @@
+Cinza
+background-color: rgb(35, 35, 35);
+
+Quase Branco
+background-color: rgb(238, 238, 238);
+
+Roxo
+background-color: rgb(41, 41, 77);
+
+Roxo Claro
+background-color: rgb(76, 76, 139);

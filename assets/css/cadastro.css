@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: gray;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgb(238, 238, 238);
+}
+
+header{
+    width: 100%;
+    height: auto;
+
+    background-color: white;
+}
+
+.socials-customers-bg{
+    width: 100%;
+    height: 23px;
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socials-customers{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials ul{
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+
+    margin-top: 1px;
+}
+
+.socials li{
+    padding: 0px 2px;
+    margin: 1px 10px;
+
+    list-style: none;
+}
+
+.customers-area ul{
+    display: flex;
+}
+
+.customers-area li{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+
+    list-style: none;
+
+    padding: 2px 1px;
+    margin: 0px 10px;
+}
+
+.customers-area a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.fixed-nav-bg{
+    height: 65px;
+    width: 100%;
+
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+}
+
+.fixed-nav{
+    border-left: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+
+    height: 100%;
+    width: 1150px;
+    padding: 0px 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shop-name{
+    height: 100%;
+    margin-right: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-name a, span{
+    text-decoration: none;
+    color: white;
+}
+
+.search-field{
+    height: 100%;
+    width: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: auto;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+.cadastro-bg{
+    width: 1150px;
+    height: 85vh;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cadastro-box{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    gap: 25px;
+}
+
+.cadastro-box:hover{
+    cursor: pointer;
+}
+
+.cadastro-item{
+    height: auto;
+    width: 100%;
+    
+    background-color: rgb(41, 41, 77);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .5s;
+}
+
+.cadastro-box:hover>:not(:hover){
+    cursor: pointer;
+    opacity: .75;
+    transform: scale(.99);
+}
+
+.cadastro-item svg{
+    height: 32px;
+    width: 32px;
+
+    fill: white;
+}
+
+.cadastro-item ul{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    margin: 0;
+    padding: 40px;
+}
+
+.cadastro-item li{
+    list-style: none;
+}
+
+.cadastro-item span{
+    margin-left: 10px;
+    color: white;
+    font-size: 18pt;
+}
+
+.cadastro-item p{
+    margin-left: 10px;
+    list-style: none;
+    color: lightgray;
+    font-size: 11pt;
+}
+
+.cliente-form, .vendedor-form{
+    width: 100%;
+    height: auto;
+
+    background-color: white;
+    padding: 20px 20px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.submit-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-container{
+    width: 100%;
+    height: auto;
+
+    padding: 2px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    height: 53.5%;
+
+    padding: 0;
+    margin-top: 30px;
+}
+
+.footer-bg{
+    background-color: transparent;
+
+    width: 1150px;
+    height: auto;
+}
+
+.footer-references{
+    width: 100%;
+
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-top: 10px;
+}
+
+.footer-references h6{
+    font-size: 16pt;
+    color: white;
+}
+
+.footer-references span{
+    color: lightgray;
+    font-size: 11pt;
+    text-align: center;
+    width: 80%;
+}
+
+.footer-references ul{
+    list-style: none;
+}
+
+.footer-references li a{
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-size: 10pt;
+}
+
+.rest{
+    background-color: rgb(41, 41, 77);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.rest ul{
+    list-style: none;
+}
+
+.rest li{
+    color: lightgray;
+    font-size: 10pt;
+    margin-top: 2px;
+}
+
+.rest span{
+    font-size: 12pt;
+    font-weight: bold;
+
+    vertical-align: top;
+}
+
+.rest a{
+    text-decoration: none;
+    color: lightgray;
+}
+
+.to-top{
+    height: 32px;
+    background-color: rgb(76, 76, 139);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12pt;
+    font-weight: bold;
+
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.to-top svg{
+    height: 16px;
+    width: 16px;
+
+    fill: coral;
+}
+
+
+@media screen and (max-width: 1150px){
+    .fixed-nav, .footer-bg, .cadastro-bg, .cliente-form, .vendedor-form{
+        width: 95%;
+    }
+
+    .cadastro-box{
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .shop-name{
+        margin-right: 10px;
+    }
+}

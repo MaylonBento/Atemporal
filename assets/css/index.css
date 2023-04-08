@@ -1,0 +1,540 @@
+#changelog{
+    padding: 5px 10px;
+    background-color: brown;
+    border-radius: 2rem;
+    color: white;
+    font-weight: bolder;
+
+    bottom: 25px;
+    left: 85%;
+    position: fixed;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: gray;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgb(238, 238, 238);
+}
+
+header{
+    width: 100%;
+    height: auto;
+
+    background-color: white;
+}
+
+.socials-customers-bg{
+    width: 100%;
+    height: 23px;
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socials-customers{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials ul{
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+
+    margin-top: 1px;
+}
+
+.socials li{
+    padding: 0px 2px;
+    margin: 1px 10px;
+
+    list-style: none;
+}
+
+.customers-area ul{
+    display: flex;
+}
+
+.customers-area li{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+
+    list-style: none;
+
+    padding: 2px 1px;
+    margin: 0px 10px;
+}
+
+.customers-area a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.fixed-nav-bg{
+    height: 65px;
+    width: 100%;
+
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 2;
+}
+
+.fixed-nav{
+    border-left: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+
+    height: 100%;
+    width: 1150px;
+    padding: 0px 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shop-name{
+    height: 100%;
+    margin-right: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-name a, span{
+    text-decoration: none;
+    color: white;
+}
+
+.search-field{
+    height: 100%;
+    width: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: auto;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-carousel{
+    height: auto;
+    max-height: 725px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    filter: blur(.2);
+
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+.main-carousel img{
+    object-fit: cover;
+}
+
+.main-carousel-bottom{
+    background-color: rgb(76, 76, 139);
+    height: 32px;
+}
+
+.carousel-box{
+    height: auto;
+    max-height: 725px;
+    width: 100%;
+}
+
+.categories-bg{
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: auto;
+    padding: 0px;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories{
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.2) 90%, rgba(255,255,255,0) 100%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 1;
+
+    margin-top: 100px;
+}
+
+.categories ul{
+    height: 100%;
+    width: 1150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+.categories li{
+    height: 100%;
+    list-style: none;
+    font-size: 10pt;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 2rem;
+}
+
+.categories a{
+    margin-bottom: 4px;
+    padding: .8rem;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.categories span{
+    color: white;
+    font-weight: bold;
+}
+
+.categories svg{
+    height: 32px;
+    width: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    fill: rgb(41, 41, 77);
+}
+
+#special-currency a{
+    background-color: yellowgreen;
+    rotate: 15deg;
+    padding: .1rem;
+}
+
+#special-currency svg{
+    margin-left: 2px;
+    height: 50px;
+    width: 50px;
+
+    fill: rgb(41, 41, 77);
+}
+
+
+
+
+
+
+.products-showcase-bg{
+    width: 100%;
+    height: auto;
+    margin-top: 41px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-tittle{
+    margin: 40px 0px 20px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row-tittle span{
+    letter-spacing: .01em;
+    font-size: 32pt;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+}
+
+.row-tittle p{
+    letter-spacing: .01em;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray
+}
+
+.row-tittle section{
+    width: 10%;
+    border-top: 2px solid gray;
+}
+
+.products-showcase{
+    margin-bottom: 40px;
+
+    width: 1150px;
+    height: auto;
+}
+
+.products-showcase span{
+    font-weight: bold;
+    font-size: 14pt;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.showcase ul{
+    width: 100%;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showcase li{
+    height: 100%;
+    width: 100%;
+    margin: 5px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: hidden;
+
+    list-style: none;
+    font-size: 12pt;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase img{
+    width: 100%;
+    height: 90%;
+
+    background: white;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-top: 30px;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-bg{
+    background-color: transparent;
+    
+    width: 1150px;
+    height: auto;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+
+    gap: 15px;
+
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo{
+    width: 100%;
+    height: 180px;
+
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img{
+    height: 180px;
+    width: auto;
+}
+
+.footer-references{
+    width: 100%;
+    height: 180px;
+
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-top: 10px;
+}
+
+.footer-references h6{
+    font-size: 16pt;
+    color: white;
+}
+
+.footer-references span{
+    color: lightgray;
+    font-size: 11pt;
+    text-align: center;
+    width: 80%;
+}
+
+.footer-references ul{
+    list-style: none;
+}
+
+.footer-references li a{
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-size: 10pt;
+}
+
+.rest{
+    background-color: rgb(41, 41, 77);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.rest ul{
+    list-style: none;
+}
+
+.rest li{
+    color: lightgray;
+    font-size: 10pt;
+    margin-top: 2px;
+}
+
+.rest span{
+    font-size: 12pt;
+    font-weight: bold;
+
+    vertical-align: top;
+}
+
+.rest a{
+    text-decoration: none;
+    color: lightgray;
+}
+
+.to-top{
+    height: 32px;
+    background-color: rgb(76, 76, 139);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12pt;
+    font-weight: bold;
+
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.to-top svg{
+    height: 16px;
+    width: 16px;
+
+    fill: coral;
+}
+
+
+@media screen and (max-width: 1150px){
+    .fixed-nav, .products-showcase, .categories ul, .footer-bg{
+        width: 95%;
+    }
+
+    .shop-name{
+        margin-right: 10px;
+    }
+
+    .categories li{
+        padding: .5rem;
+    }
+
+    .categories svg{
+        height: 32px;
+        width: 32px;
+    }
+    
+    #special-currency svg{
+        height: 54px;
+        width: 54px;
+    }
+
+    .showcase li{
+        height: 300px;
+        width: 100%;
+    }
+}
