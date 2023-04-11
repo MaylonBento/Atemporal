@@ -152,7 +152,7 @@ main{
 
 .main-carousel{
     height: auto;
-    max-height: 725px;
+    max-height: 500px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -361,13 +361,13 @@ main{
     margin-bottom: 10px;
 }
 
-.scroll-lateral{
+/* .scroll-lateral{
     width: 300px;
     height: 200px;
     overflow-x: scroll;
     z-index: 1;
     border: 1px solid aqua;
-} 
+}  */
 
 
 

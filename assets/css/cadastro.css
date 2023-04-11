@@ -180,7 +180,6 @@ main{
 }
 
 .cadastro-box:hover>:not(:hover){
-    cursor: pointer;
     opacity: .75;
     transform: scale(.99);
 }

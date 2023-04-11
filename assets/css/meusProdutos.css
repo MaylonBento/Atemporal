@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: gray;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+
+    background-color: transparent;
+}
+
+main{
+    height: auto;
+    width: 100%;
+}
+
+.botoes-bg{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.botoes-bg:hover>:not(:hover){
+    opacity: .75;
+    transform: scale(.99);
+}
+
+.botoes{
+    height: 120px;
+    width: 100%;
+
+    background-color: rgb(41, 41, 77);
+    border-radius: 1rem;
+    padding: 5px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: .5s;
+}
+
+.botoes:hover{
+    cursor: pointer;
+}
+
+.botoes svg{
+    height: 32px;
+    width: 32px;
+
+    fill: white;
+}
+
+.botoes ul{
+    height: 100%;
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botoes li{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.botoes span{
+    color: white;
+    font-size: 14pt;
+}
+
+.botoes p{
+    color: lightgray;
+    font-size: 11pt;
+}
