@@ -26,6 +26,9 @@
                 session_start();
                 $_SESSION['login']=$userLogin;
                 $_SESSION['tipoConta']='Cliente';
+
+                $clienteID = $pass['ID_CLIENTE'];
+                $_SESSION['idUser']=$clienteID;
                 header("Location:../../index.php");
             }else {
                 echo    "<script language='javascript' type='text/javascript'>alert('Login inválido! Verifique seu Email e Senha e tente novamente.');window.location.href='../login.php';</script>";
@@ -44,6 +47,8 @@
                 session_start();
                 $_SESSION['login']=$userLogin;
                 $_SESSION['tipoConta']='Vendedor';
+
+                $_SESSION['idUser']=$vendedorID;
                 header("Location:../../index.php");
             }else {
                 echo    "<script language='javascript' type='text/javascript'>alert('Login inválido! Verifique seu Email e Senha e tente novamente.');window.location.href='../login.php';</script>";

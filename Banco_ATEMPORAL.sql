@@ -1,189 +1,183 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Abr-2023 às 21:44
--- Versão do servidor: 8.0.31
--- versão do PHP: 8.0.26
+drop database Atemporal;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+Create Database Atemporal;
+use Atemporal;
+
+/* 
+
+if not exists ( caso não tenha exista tabela com nome escolhido, tabela será criada
+
+ */
+ 
+
+CREATE TABLE if not exists TB_USUARIO(
+ID_USER int AUTO_INCREMENT PRIMARY KEY,
+EMAIL_USER Varchar(60) NOT Null,
+SENHA_USER Varchar(255) NOT Null,
+STATUS_USER int(1) NOT Null);
+
+desc TB_USUARIO;
+SELECT * FROM TB_USUARIO;
+
+CREATE TABLE if not exists TB_VENDEDOR(
+ID_VENDEDOR int AUTO_INCREMENT PRIMARY KEY,
+NOME_VENDEDOR Varchar(60) NOT Null,
+TIPO_VENDEDOR Char(1) Null,
+FONE_VENDEDOR Char(14) NOT Null,
+EMAIL_VENDEDOR Varchar(60) NOT Null UNIQUE,
+SENHA_VENDEDOR Varchar(255) NOT Null,
+CPF_VENDEDOR Char(14) NOT Null UNIQUE,
+DTA_CAD_VENDEDOR Date NOT Null,
+DTA_NASC_VENDEDOR Date NOT Null,
+STATUS_VENDEDOR Varchar(1) Null,
+IMAGEM_VENDEDOR Varchar(200) Null,
+ID_USER int Null,
+
+foreign key (ID_USER) references TB_USARIO (ID_USER));
+
+desc TB_VENDEDOR;
+SELECT * FROM TB_VENDEDOR;
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE TABLE if not exists TB_CLIENTE(
+ID_CLIENTE int AUTO_INCREMENT PRIMARY KEY,
+NOME_CLIENTE Varchar(60) NOT Null,
+TIPO_CLIENTE Char(1) Null,
+FONE_CLIENTE Char(14) NOT Null,
+EMAIL_CLIENTE Varchar(100) NOT Null UNIQUE,
+SENHA_CLIENTE Varchar(255) NOT Null,
+CPF_CLIENTE Char(14) NOT Null UNIQUE,
+DTA_CAD_CLIENTE Date NOT NUll,
+DTA_NASC_CLIENTE Date NOT Null,
+STATUS_CLIENTE Varchar(1) Null,
+IMAGEM_CLIENTE Varchar(200) Null,
+ID_USER int Null,
 
---
--- Banco de dados: `atemporal`
---
+foreign key (ID_USER) references TB_USARIO (ID_USER));
 
--- --------------------------------------------------------
+desc TB_CLIENTE;
+SELECT * FROM TB_CLIENTE;
 
---
--- Estrutura da tabela `tb_anuncio`
---
 
-DROP TABLE IF EXISTS `tb_anuncio`;
-CREATE TABLE IF NOT EXISTS `tb_anuncio` (
-  `ID_ANUNCIO` int NOT NULL AUTO_INCREMENT,
-  `NOME_ANUNCIO` varchar(80) NOT NULL,
-  `DESC_ANUNCIO` text NOT NULL,
-  `VALOR_VENDA_ANUNCIO` decimal(8,2) NOT NULL,
-  `ID_VENDEDOR` int NOT NULL,
-  `STATUS_ANUNCIO` varchar(40) NOT NULL,
-  `QTD_ANUNCIO` int NOT NULL,
-  PRIMARY KEY (`ID_ANUNCIO`),
-  KEY `ID_VENDEDOR` (`ID_VENDEDOR`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE if not exists TB_ENDERECO(
+ID_END int AUTO_INCREMENT PRIMARY KEY,
+LOGRADOURO_END Varchar(60) NOT Null,
+CEP Char(8) NOT Null,
+NUM Int(7) NOT Null,
+COMPLEMENTO Varchar(50),
+ID_USER Int NOT Null,
 
---
--- Extraindo dados da tabela `tb_anuncio`
---
+foreign key (ID_USER) references TB_USARIO (ID_USER));
 
-INSERT INTO `tb_anuncio` (`ID_ANUNCIO`, `NOME_ANUNCIO`, `DESC_ANUNCIO`, `VALOR_VENDA_ANUNCIO`, `ID_VENDEDOR`, `STATUS_ANUNCIO`, `QTD_ANUNCIO`) VALUES
-(1, 'Gramofone Retrô Clássico', 'Enfeite decorativo em forma de um gramofone clássico com 23,5 x 18 x 15,5 cm de dimensão, detalhes e cores muito realista.', '15000.00', 1, '1', 1),
-(2, 'Máquina de Escrever Remingston Standard', 'Máquina de escrever é um dos objetos mais nostálgicos para quem tem pelo menos 40 anos de idade. Nem tanto pelo visual, mas principalmente pelo som característico', '52000.00', 2, '1', 1),
-(3, 'Relógio de bolso Fiorenza', 'Relógio Suiço com 5cm de diâmetro fabricado por volta de 1940 ', '60000.00', 3, '1', 1),
-(4, 'Ferro de Passar em Cobre', 'Feito de Cobre, abastecido com carvão e pesa cerca de 400g. Não é mais utilizado no mundo contemporâneo mas esta em ótimo estado de conservação', '30000.00', 4, '1', 1),
-(5, 'Moedor de Café Antigo', 'Moe grãos, operação manual: O manual do moedor de café pode satisfazer a diversão da operação manual e desfrutar de café DIY com amigos e familiares.', '66000.00', 5, '1', 1),
-(6, 'Máquina de Costura Thomas Saint', 'A primeira máquina de costura a ser feita e patenteada foi idealizada para trabalhar com couro e o detentor da invenção foi Thomas Saint, em 1790.', '500000.00', 6, '1', 1);
+desc TB_ENDERECO;
+SELECT * FROM TB_ENDERECO;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `tb_chat`
---
+CREATE TABLE if not exists TB_ANUNCIO(
+ID_ANUNCIO int AUTO_INCREMENT PRIMARY KEY,
+NOME_ANUNCIO Varchar(80) NOT Null,
+CATEGORIA_ANUNCIO Varchar(13) NOT Null,
+DESC_ANUNCIO Text NOT Null,
+VALOR_VENDA_ANUNCIO Numeric(8,2) NOT Null,
+ID_VENDEDOR int NOT NULL,
+STATUS_ANUNCIO Varchar(40) NOT Null,
+QTD_ANUNCIO int NOT Null,
 
-DROP TABLE IF EXISTS `tb_chat`;
-CREATE TABLE IF NOT EXISTS `tb_chat` (
-  `ID_CHAT` int NOT NULL AUTO_INCREMENT,
-  `MENSAGEM_CHAT` varchar(800) NOT NULL,
-  `TIME_ENVIO_CHAT` date NOT NULL,
-  `DES_CHAT` varchar(40) NOT NULL,
-  `ID_ANUNCIO` int NOT NULL,
-  `ID_CLIENTE` int NOT NULL,
-  PRIMARY KEY (`ID_CHAT`),
-  UNIQUE KEY `DES_CHAT` (`DES_CHAT`),
-  KEY `ID_ANUNCIO` (`ID_ANUNCIO`),
-  KEY `ID_CLIENTE` (`ID_CLIENTE`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+foreign key (ID_VENDEDOR) references TB_VENDEDOR (ID_VENDEDOR));
 
--- --------------------------------------------------------
+desc TB_ANUNCIO;
+SELECT * FROM TB_ANUNCIO;
 
---
--- Estrutura da tabela `tb_cliente`
---
 
-DROP TABLE IF EXISTS `tb_cliente`;
-CREATE TABLE IF NOT EXISTS `tb_cliente` (
-  `ID_CLIENTE` int NOT NULL AUTO_INCREMENT,
-  `NOME_CLIENTE` varchar(60) NOT NULL,
-  `TIPO_CLIENTE` char(1) DEFAULT NULL,
-  `FONE_CLIENTE` char(14) NOT NULL,
-  `EMAIL_CLIENTE` varchar(100) NOT NULL,
-  `SENHA_CLIENTE` varchar(255) NOT NULL,
-  `CPF_CLIENTE` char(14) NOT NULL,
-  `DTA_CAD_CLIENTE` date NOT NULL,
-  `DTA_NASC_CLIENTE` date NOT NULL,
-  `STATUS_CLIENTE` varchar(1) DEFAULT NULL,
-  `IMAGEM_CLIENTE` varchar(200) DEFAULT NULL,
-  `ID_USER` int DEFAULT NULL,
-  PRIMARY KEY (`ID_CLIENTE`),
-  UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`),
-  UNIQUE KEY `CPF_CLIENTE` (`CPF_CLIENTE`),
-  KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE if not exists TB_CHAT(
+ID_CHAT int AUTO_INCREMENT PRIMARY KEY,
+MENSAGEM_CHAT Varchar(800) NOT Null,
+TIME_ENVIO_CHAT Date NOT Null,
+DES_CHAT Varchar(40) NOT Null UNIQUE,
+ID_ANUNCIO int NOT Null,
+ID_CLIENTE int NOT Null,
 
--- --------------------------------------------------------
+foreign key (ID_ANUNCIO) references TB_ANUNCIO (ID_ANUNCIO),
+foreign key (ID_CLIENTE) references TB_CLIENTE (ID_CLIENTE));
 
---
--- Estrutura da tabela `tb_endereco`
---
+desc TB_CHAT;
+SELECT * FROM TB_CHAT;
 
-DROP TABLE IF EXISTS `tb_endereco`;
-CREATE TABLE IF NOT EXISTS `tb_endereco` (
-  `ID_END` int NOT NULL AUTO_INCREMENT,
-  `LOGRADOURO_END` varchar(60) NOT NULL,
-  `CEP` char(8) NOT NULL,
-  `NUM` int NOT NULL,
-  `COMPLEMENTO` varchar(50) DEFAULT NULL,
-  `ID_USER` int NOT NULL,
-  PRIMARY KEY (`ID_END`),
-  KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE if not exists TB_VENDA(
+ID_VENDA int AUTO_INCREMENT PRIMARY KEY,
+DTA_VENDA Date NOT Null,
+VALOR_VENDA Numeric(8,2) NOT Null,
+STATUS_VENDA Varchar(40) NOT Null,
+ID_ANUNCIO int NOT Null,
+ID_CLIENTE Int NOT Null,
 
--- --------------------------------------------------------
+foreign key (ID_ANUNCIO) references TB_ANUNCIO (ID_ANUNCIO),
+foreign key (ID_CLIENTE) references TB_CLIENTE (ID_CLIENTE));
 
---
--- Estrutura da tabela `tb_usuario`
---
+desc TB_VENDA;
+SELECT * FROM TB_VENDA;
 
-DROP TABLE IF EXISTS `tb_usuario`;
-CREATE TABLE IF NOT EXISTS `tb_usuario` (
-  `ID_USER` int NOT NULL AUTO_INCREMENT,
-  `EMAIL_USER` varchar(60) NOT NULL,
-  `SENHA_USER` varchar(255) NOT NULL,
-  `STATUS_USER` int NOT NULL,
-  PRIMARY KEY (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO TB_ANUNCIO(ID_ANUNCIO,NOME_ANUNCIO,DESC_ANUNCIO,VALOR_VENDA_ANUNCIO,STATUS_ANUNCIO,QTD_ANUNCIO,ID_VENDEDOR) VALUES
+    (
+        '1',
+        'Gramofone Retrô Clássico',
+        'Enfeite decorativo em forma de um gramofone clássico com 23,5 x 18 x 15,5 cm de dimensão, detalhes e cores muito realista.',
+        '15000',
+        '1',
+        '1',
+        '1'
+    ),
 
--- --------------------------------------------------------
+    (
+        '2',
+        'Máquina de Escrever Remingston Standard',
+        'Máquina de escrever é um dos objetos mais nostálgicos para quem tem pelo menos 40 anos de idade. Nem tanto pelo visual, mas principalmente pelo som característico',
+        '52000',
+        '1',
+        '1',
+        '2'
+    ),
 
---
--- Estrutura da tabela `tb_venda`
---
+    (
+        '3',
+        'Relógio de bolso Fiorenza',
+        'Relógio Suiço com 5cm de diâmetro fabricado por volta de 1940 ',
+        '60000',
+        '1',
+        '1',
+        '3'
+    ),
 
-DROP TABLE IF EXISTS `tb_venda`;
-CREATE TABLE IF NOT EXISTS `tb_venda` (
-  `ID_VENDA` int NOT NULL AUTO_INCREMENT,
-  `DTA_VENDA` date NOT NULL,
-  `VALOR_VENDA` decimal(8,2) NOT NULL,
-  `STATUS_VENDA` varchar(40) NOT NULL,
-  `ID_ANUNCIO` int NOT NULL,
-  `ID_CLIENTE` int NOT NULL,
-  PRIMARY KEY (`ID_VENDA`),
-  KEY `ID_ANUNCIO` (`ID_ANUNCIO`),
-  KEY `ID_CLIENTE` (`ID_CLIENTE`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+    (
+        '4',
+        'Ferro de Passar em Cobre',
+        'Feito de Cobre, abastecido com carvão e pesa cerca de 400g. Não é mais utilizado no mundo contemporâneo mas esta em ótimo estado de conservação',
+        '30000',
+        '1',
+        '1',
+        '4'
+    ),
 
--- --------------------------------------------------------
+    (
+        '5',
+        'Moedor de Café Antigo',
+        'Moe grãos, operação manual: O manual do moedor de café pode satisfazer a diversão da operação manual e desfrutar de café DIY com amigos e familiares.',
+        '66000',
+        '1',
+        '1',
+        '5'
+    ),
 
---
--- Estrutura da tabela `tb_vendedor`
---
-
-DROP TABLE IF EXISTS `tb_vendedor`;
-CREATE TABLE IF NOT EXISTS `tb_vendedor` (
-  `ID_VENDEDOR` int NOT NULL AUTO_INCREMENT,
-  `NOME_VENDEDOR` varchar(60) NOT NULL,
-  `TIPO_VENDEDOR` char(1) DEFAULT NULL,
-  `FONE_VENDEDOR` char(14) NOT NULL,
-  `EMAIL_VENDEDOR` varchar(60) NOT NULL,
-  `SENHA_VENDEDOR` varchar(255) NOT NULL,
-  `CPF_VENDEDOR` char(14) NOT NULL,
-  `DTA_CAD_VENDEDOR` date NOT NULL,
-  `DTA_NASC_VENDEDOR` date NOT NULL,
-  `STATUS_VENDEDOR` varchar(1) DEFAULT NULL,
-  `IMAGEM_VENDEDOR` varchar(200) DEFAULT NULL,
-  `ID_USER` int DEFAULT NULL,
-  PRIMARY KEY (`ID_VENDEDOR`),
-  UNIQUE KEY `EMAIL_VENDEDOR` (`EMAIL_VENDEDOR`),
-  UNIQUE KEY `CPF_VENDEDOR` (`CPF_VENDEDOR`),
-  KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `tb_vendedor`
---
+    (
+        '6',
+        'Máquina de Costura Thomas Saint',
+        'A primeira máquina de costura a ser feita e patenteada foi idealizada para trabalhar com couro e o detentor da invenção foi Thomas Saint, em 1790.',
+        '500000',
+        '1',
+        '1',
+        '6'
+    );
 
 INSERT INTO `tb_vendedor` (`ID_VENDEDOR`, `NOME_VENDEDOR`, `TIPO_VENDEDOR`, `FONE_VENDEDOR`, `EMAIL_VENDEDOR`, `SENHA_VENDEDOR`, `CPF_VENDEDOR`, `DTA_CAD_VENDEDOR`, `DTA_NASC_VENDEDOR`, `STATUS_VENDEDOR`, `IMAGEM_VENDEDOR`, `ID_USER`) VALUES
 (1, 'Bruno Nascimento de Moraes', NULL, '(12)31231-2312', 'bruno@hotmail.com', '$2y$10$T4hten.kfpKkdEZ9wbEP6Oi7sHQ2pNg4ybuEs/cCkgnpgoIm2Mb.m', '123.123.123-12', '2023-04-10', '1998-11-06', NULL, NULL, NULL);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
