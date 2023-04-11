@@ -30,7 +30,7 @@ main{
 
 .botoes-bg:hover>:not(:hover){
     opacity: .75;
-    transform: scale(.99);
+    transform: scale(.99);:
 }
 
 .botoes{
