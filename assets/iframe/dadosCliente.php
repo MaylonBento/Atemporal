@@ -160,7 +160,7 @@
  */    
     const fone0 = document.getElementById('telefone');
 
-    fone0.addEventListener("keyup", () => {
+    fone0.addEventListener("keypress", () => {
     const fone0Value = fone0.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
     
     fone0.value = fone0Value;

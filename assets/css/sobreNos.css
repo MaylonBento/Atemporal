@@ -162,7 +162,8 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: justify;
+    text-align: justify; /* Não tá deixando justificado */
     /*border: 1px solid aqua;*/
 }
 

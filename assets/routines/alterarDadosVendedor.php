@@ -20,19 +20,20 @@
     if (isset($_POST['saveBtn'])) {
         $stmAlter = $connection->prepare("UPDATE TB_VENDEDOR SET FONE_VENDEDOR=? WHERE EMAIL_VENDEDOR=?");
         $stmAlter->bind_param('ss',$novoTelefone, $sessaoUsuario);
-        $stmAlter->execute();
 
-        if(@move_uploaded_file($arqTemp,$caminho)){
+        if($stmAlter->execute()) {
+            @move_uploaded_file($arqTemp,$caminho);
             $stmFoto = $connection->prepare("UPDATE TB_VENDEDOR SET IMAGEM_VENDEDOR=? WHERE EMAIL_VENDEDOR=?");
             $stmFoto->bind_param('ss',$caminho, $sessaoUsuario);
-            $stmFoto->execute();
-
-            echo    "<script language='javascript' type='text/javascript'>alert('Seus dados foram alterados com sucesso!');window.location.href='../iframe/dadosVendedor.php';</script>";
-            }else {
+                
+            if($stmFoto->execute()) {
                 echo    "<script language='javascript' type='text/javascript'>alert('Seus dados foram alterados com sucesso!');window.location.href='../iframe/dadosVendedor.php';</script>";
-            }
+                }else {
+                    echo    "<script language='javascript' type='text/javascript'>alert('Falha ao fazer o Upload da Imagem do Usuário');window.location.href='../iframe/dadosVendedor.php';</script>";
+                }
         }else {
-        echo    "<script language='javascript' type='text/javascript'>alert('Algo de errado aconteceu!');window.location.href='../iframe/dadosVendedor.php';</script>";
-        exit();
+            echo    "<script language='javascript' type='text/javascript'>alert('Falha ao Atualizar os Dados do Usuário');window.location.href='../iframe/dadosVendedor.php';</script>";
+            exit();
+            }
     }
 ?>

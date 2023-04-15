@@ -31,14 +31,18 @@
         if ($stmCheckEmail->num_rows <= 0) {
             $stmCliente = $connection->prepare("INSERT INTO TB_CLIENTE(NOME_CLIENTE,CPF_CLIENTE,FONE_CLIENTE,DTA_NASC_CLIENTE,DTA_CAD_CLIENTE,EMAIL_CLIENTE,SENHA_CLIENTE) VALUES(?,?,?,?,?,?,?)");
             $stmCliente->bind_param('sssssss', $nomeCliente,$cpfCliente,$foneCliente,$nascimentoCliente,$dataCriacao,$emailCliente,$senhaClienteHashed);
-            $stmCliente->execute();
-    
-            session_start();
-            $_SESSION['login']=$emailCliente;
-            $_SESSION['tipoConta']='Cliente';
+            
+            if ($stmCliente->execute()) {
+                session_start();
+                    $_SESSION['login']=$emailCliente;
+                    $_SESSION['tipoConta']='Cliente';
 
-            header("Location:../minhaConta.php");
-        }else {
+                    header("Location:../minhaConta.php");
+            }   else {
+                    echo    "<script language='javascript' type='text/javascript'>alert('Ocorreu um erro na inserção dos dados! Verificar DB e arquivo do Cadastro!');</script>";
+                    header('Location:../login.php');
+                }
+        } else {
             echo    "<script language='javascript' type='text/javascript'>alert('Ja existe uma conta com os dados inseridos! Faça o login.');</script>";
             header('Location:../login.php');
         }
@@ -53,14 +57,18 @@
         if ($stmCheckEmail->num_rows <= 0) {
             $stmVendedor = $connection->prepare("INSERT INTO TB_VENDEDOR(NOME_VENDEDOR,CPF_VENDEDOR,FONE_VENDEDOR,DTA_NASC_VENDEDOR,DTA_CAD_VENDEDOR,EMAIL_VENDEDOR,SENHA_VENDEDOR) VALUES(?,?,?,?,?,?,?)");
             $stmVendedor->bind_param('sssssss', $nomeVendedor,$cpfVendedor,$foneVendedor,$nascimentoVendedor,$dataCriacao,$emailVendedor,$senhaVendedorHashed);
-            $stmVendedor->execute();
+            
+            if($stmVendedor->execute()){
+                session_start();
+                    $_SESSION['login']=$emailVendedor;
+                    $_SESSION['tipoConta']='Vendedor';
 
-            session_start();
-                $_SESSION['login']=$emailVendedor;
-                $_SESSION['tipoConta']='Vendedor';
-
-            header("Location:../minhaConta.php");
-            }else {
+                header("Location:../minhaConta.php");
+            }   else {
+                    echo    "<script language='javascript' type='text/javascript'>alert('Ocorreu um erro na inserção dos dados! Verificar DB e arquivo do Cadastro!');</script>";
+                    header('Location:../login.php');
+                }
+        } else {
             echo    "<script language='javascript' type='text/javascript'>alert('Ja existe uma conta com os dados inseridos! Faça o login.');</script>";
             header('Location:../login.php');
         }

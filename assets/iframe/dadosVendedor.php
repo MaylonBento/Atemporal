@@ -117,7 +117,9 @@
         <div class="meus-dados-bg">
             <form method="POST" action="../routines/alterarDadosVendedor.php" enctype="multipart/form-data">
                 <div class="foto-usuario">
-                    <img src="<?=$imagemUsuario?>" alt="Foto de Perfil" name="fotoPerfil">
+                    <label for="alterarFoto">
+                        <img src="<?=$imagemUsuario?>" alt="Foto de Perfil" name="fotoPerfil">
+                    </label>
                     <input type="file" id="alterarFoto" name="alterarFoto" value="">
                 </div>
 
@@ -155,12 +157,12 @@
     
 </body>
 <script>
-    const fone0 = document.getElementById('telefone');
+    const fone = document.getElementsById("telefone");
 
-    fone0.addEventListener("keyup", () => {
-    const fone0Value = fone0.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
+    fone.addEventListener("keypress", () => {
+        const foneValue = fone.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
     
-    fone0.value = fone0Value;
+        fone.value = foneValue;
     });
 </script>
 </html>

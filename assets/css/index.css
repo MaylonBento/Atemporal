@@ -272,6 +272,59 @@ main{
 
 
 
+.banner-meio-bg{
+    background-color: transparent;
+    width: 1150px;
+    height: auto;
+}
+
+.banner-meio-content{
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    height: auto;
+}
+
+.banner-meio{
+    width: 100%;
+    height: auto;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-meio img{
+    height: 180px;
+    width: 100%;
+
+    background-size: cover;
+    
+}
+
+
+
+
+
+
+
+
+
+
+.ver-mais{
+    background-color: aqua;
+    color: black;
+    height: 100%;
+
+
+
+    
+   
+}
+
+
 .products-showcase-bg{
     width: 100%;
     height: auto;
@@ -283,7 +336,7 @@ main{
     justify-content: center;
 }
 
-.row-tittle{
+.row-tittle, .row-tittle-2{
     margin: 40px 0px 20px 0px;
 
     display: flex;
@@ -299,14 +352,21 @@ main{
     color: black;
 }
 
-.row-tittle p{
+.row-tittle-2 span{
+    letter-spacing: .01em;
+    font-size: 32pt;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.row-tittle p, .row-tittle-2 p{
     letter-spacing: .01em;
     font-size: 12pt;
     font-family: Arial, Helvetica, sans-serif;
     color: gray
 }
 
-.row-tittle section{
+.row-tittle section, .row-tittle-2 section{
     width: 10%;
     border-top: 2px solid gray;
 }
@@ -324,8 +384,13 @@ main{
     color: rgba(0, 0, 0, 0.8);
 }
 
-.showcase ul{
+.showcase-recentes{
+    margin-bottom: 40px;
+}
+
+.showcase-recentes ul{
     width: 100%;
+    height: 250px;
     padding: 0;
 
     display: flex;
@@ -333,7 +398,7 @@ main{
     align-items: center;
 }
 
-.showcase li{
+.showcase-recentes li{
     height: 100%;
     width: 100%;
     margin: 5px;
@@ -352,22 +417,152 @@ main{
     align-items: center;
 }
 
-.showcase img{
-    width: 100%;
-    height: 90%;
+.showcase-recentes img{
+    width: 150px;
+    height: 150px;
 
     background: white;
+    background-size: cover;
     object-fit: contain;
     margin-bottom: 10px;
 }
 
-/* .scroll-lateral{
-    width: 300px;
-    height: 200px;
-    overflow-x: scroll;
-    z-index: 1;
-    border: 1px solid aqua;
-}  */
+.showcase-recentes p{
+    color: gray;
+    font-size: 12pt;
+}
+
+.showcase-recentes span{
+    color: black;
+    font-size: 14pt;
+    margin-top: -15px;
+}
+
+
+
+.showcase-antigos{
+    height: auto;
+    width: 100%;
+
+    margin-bottom: 40px;
+}
+
+.showcase-antigos ul{
+    width: 100%;
+    height: 450px;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.showcase-antigos li{
+    height: 100%;
+    width: 100%;
+    margin: 5px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 10px;
+
+    list-style: none;
+    font-size: 12pt;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-antigos img{
+    width: 350px;
+    height: 350px;
+
+    background: white;
+    background-size: cover;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.showcase-antigos p{
+    color: gray;
+    font-size: 14pt;
+}
+
+.showcase-antigos span{
+    color: black;
+    font-size: 16pt;
+    margin-top: -15px;
+}
+
+
+
+
+.showcase-melhores{
+    height: auto;
+    width: 100%;
+
+    margin-bottom: 40px;
+}
+
+.showcase-melhores ul{
+    width: 100%;
+    height: 250px;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.showcase-melhores li{
+    height: 100%;
+    width: 100%;
+    margin: 5px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: hidden;
+
+    list-style: none;
+    font-size: 12pt;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-melhores img{
+    width: 150px;
+    height: 150px;
+
+    background: white;
+    background-size: cover;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.showcase-melhores p{
+    color: gray;
+    font-size: 12pt;
+}
+
+.showcase-melhores span{
+    color: black;
+    font-size: 14pt;
+    margin-top: -15px;
+}
+
+
 
 
 
