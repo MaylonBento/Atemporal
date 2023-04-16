@@ -193,12 +193,12 @@
 
                     <div class="col-md-6">
                         <label for="senhaCliente" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senhaCliente" id="senhaCliente" name="senhaCliente" minlength="6" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                        <input type="password" class="form-control" id="senhaCliente" id="senhaCliente" name="senhaCliente" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="confirmarSenhaCliente" class="form-label">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="confirmarSenhaCliente" name="confirmarSenhaCliente" minlength="6" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                        <input type="password" class="form-control" id="confirmarSenhaCliente" name="confirmarSenhaCliente" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
                     </div>
 
                     <hr>
@@ -240,12 +240,12 @@
 
                     <div class="col-md-6">
                         <label for="senhaVendedor" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senhaVendedor" id="senhaVendedor" name="senhaVendedor" minlength="6" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                        <input type="password" class="form-control" id="senhaVendedor" id="senhaVendedor" name="senhaVendedor" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="confirmarSenhaVendedor" class="form-label">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="confirmarSenhaVendedor" name="confirmarSenhaVendedor" minlength="6" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                        <input type="password" class="form-control" id="confirmarSenhaVendedor" name="confirmarSenhaVendedor" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
                     </div>
 
                     <hr>
@@ -431,6 +431,7 @@
     /* Data de Nascimento Máxima para Hoje*/
      nascimentoCliente.max = new Date().toISOString().split("T")[0];
      nascimentoVendedor.max = new Date().toISOString().split("T")[0];
+
 
 </script>
 
