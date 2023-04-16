@@ -22,6 +22,7 @@
         $stmAlter->bind_param('ss',$novoTelefone, $sessaoUsuario);
 
         if($stmAlter->execute()) {
+            unlink($caminho);
             @move_uploaded_file($arqTemp,$caminho);
             $stmFoto = $connection->prepare("UPDATE TB_VENDEDOR SET IMAGEM_VENDEDOR=? WHERE EMAIL_VENDEDOR=?");
             $stmFoto->bind_param('ss',$caminho, $sessaoUsuario);

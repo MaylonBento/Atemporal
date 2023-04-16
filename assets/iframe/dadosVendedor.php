@@ -118,7 +118,7 @@
             <form method="POST" action="../routines/alterarDadosVendedor.php" enctype="multipart/form-data">
                 <div class="foto-usuario">
                     <label for="alterarFoto">
-                        <img src="<?=$imagemUsuario?>" alt="Foto de Perfil" name="fotoPerfil">
+                        <img src="<?=$imagemUsuario?>?ver=<?=Date('his')?>" alt="Foto de Perfil" name="fotoPerfil">
                     </label>
                     <input type="file" id="alterarFoto" name="alterarFoto" value="">
                 </div>
