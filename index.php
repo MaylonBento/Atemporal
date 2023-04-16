@@ -653,8 +653,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
                         </li>
 
                         <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <button>Ver
-                                    Mais</button></a>
+                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
                         </div>
 
                     </ul>
@@ -773,8 +772,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
                         </li>
 
                         <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <button>Ver
-                                    Mais</button></a>
+                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
                         </div>
 
 
@@ -835,8 +833,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
                         </li>
 
                         <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <button>Ver
-                                    Mais</button></a>
+                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
                         </div>
 
                     </ul>
@@ -896,8 +893,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
                         </li>
 
                         <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <button>Ver
-                                    Mais</button></a>
+                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
                         </div>
 
                     </ul>
