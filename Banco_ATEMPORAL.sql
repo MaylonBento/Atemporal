@@ -1,5 +1,5 @@
 DROP DATABASE Atemporal;
-CREATE DATABASE Atemporal;
+CREATE DATABASE Atemporal DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE Atemporal;
 
 -- phpMyAdmin SQL Dump
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `tb_anuncio` (
   `IMAGEM_ANUNCIO` varchar(85) NOT NULL,
   PRIMARY KEY (`ID_ANUNCIO`),
   KEY `ID_VENDEDOR` (`ID_VENDEDOR`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Extraindo dados da tabela `tb_anuncio`
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `tb_chat` (
   UNIQUE KEY `DES_CHAT` (`DES_CHAT`),
   KEY `ID_ANUNCIO` (`ID_ANUNCIO`),
   KEY `ID_CLIENTE` (`ID_CLIENTE`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
   UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`),
   UNIQUE KEY `CPF_CLIENTE` (`CPF_CLIENTE`),
   KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `tb_endereco` (
   `ID_USER` int NOT NULL,
   PRIMARY KEY (`ID_END`),
   KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `tb_usuario` (
   `SENHA_USER` varchar(255) NOT NULL,
   `STATUS_USER` int NOT NULL,
   PRIMARY KEY (`ID_USER`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `tb_venda` (
   PRIMARY KEY (`ID_VENDA`),
   KEY `ID_ANUNCIO` (`ID_ANUNCIO`),
   KEY `ID_CLIENTE` (`ID_CLIENTE`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `tb_vendedor` (
   UNIQUE KEY `EMAIL_VENDEDOR` (`EMAIL_VENDEDOR`),
   UNIQUE KEY `CPF_VENDEDOR` (`CPF_VENDEDOR`),
   KEY `ID_USER` (`ID_USER`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Extraindo dados da tabela `tb_vendedor`
