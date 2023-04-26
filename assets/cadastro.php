@@ -188,7 +188,7 @@
                 <form action="./routines/cadastroModal.php" method="POST" class="row g-3">
                     <div class="col-12">
                         <label for="emailCliente" class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="name@example.com" id="emailCliente" name="emailCliente" required>
+                        <input type="email" class="form-control" placeholder="name@example.com" id="emailCliente" name="emailCliente" pattern="[a-z]" required>
                     </div>
 
                     <div class="col-md-6">
@@ -235,7 +235,7 @@
                 <form action="./routines/cadastroModal.php" method="POST" class="row g-3">
                     <div class="col-12">
                         <label for="emailVendedor" class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="name@example.com" id="emailVendedor" name="emailVendedor" required>
+                        <input type="email" class="form-control" placeholder="name@example.com" id="emailVendedor" name="emailVendedor" pattern="[a-z]" required>
                     </div>
 
                     <div class="col-md-6">
@@ -397,13 +397,13 @@
     const cpf0 = document.getElementById('cpfCliente');
     const cpf1 = document.getElementById('cpfVendedor');
 
-    cpf0.addEventListener("keypress", () => {
+    cpf0.addEventListener("input", () => {
     const cpf0Value = cpf0.value.replace(/[^0-9]/g, "").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/, "$1.$2.$3-$4");
     
     cpf0.value = cpf0Value;
     });
 
-    cpf1.addEventListener("keypress", () => {
+    cpf1.addEventListener("input", () => {
     const cpf1Value = cpf1.value.replace(/[^0-9]/g, "").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/, "$1.$2.$3-$4");
     
     cpf1.value = cpf1Value;
@@ -414,13 +414,13 @@
     const fone0 = document.getElementById('foneCliente');
     const fone1 = document.getElementById('foneVendedor');
 
-    fone0.addEventListener("keypress", () => {
+    fone0.addEventListener("input", () => {
     const fone0Value = fone0.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
     
     fone0.value = fone0Value;
     });
 
-    fone1.addEventListener("keypress", () => {
+    fone1.addEventListener("input", () => {
     const fone1Value = fone1.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
     
     fone1.value = fone1Value;
@@ -432,6 +432,25 @@
      nascimentoCliente.max = new Date().toISOString().split("T")[0];
      nascimentoVendedor.max = new Date().toISOString().split("T")[0];
 
+
+
+
+     /* Email para lowerCase */
+     const emailCliente = document.getElementById('emailCliente');
+        emailCliente.addEventListener("input", ()=>{
+            const emailClienteValue = emailCliente.value;
+            const emailClienteResult = emailClienteValue.toLowerCase();
+
+            emailCliente.value = emailClienteResult;
+        });
+
+    const emailVendedor = document.getElementById('emailVendedor');
+        emailVendedor.addEventListener("input", ()=>{
+            const emailVendedorValue = emailVendedor.value;
+            const emailVendedorResult = emailVendedorValue.toLowerCase();
+
+            emailVendedor.value = emailVendedorResult;
+        });
 
 </script>
 

@@ -141,7 +141,7 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Telefone para Contato</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="com DDD" value="<?=$foneUsuario?>" name="novoTelefone" id="telefone" minlength="14" maxlength="14">
+                        <input type="text" class="form-control" placeholder="com DDD" value="<?=$foneUsuario?>" name="novoTelefone" id="telefone" minlength="14" maxlength="14">
                     </div>
 
                     <div class="mb-3">
@@ -157,11 +157,10 @@
     
 </body>
 <script>
-    const fone = document.getElementsById("telefone");
+    const fone = document.getElementById('telefone');
 
     fone.addEventListener("keypress", () => {
         const foneValue = fone.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
-    
         fone.value = foneValue;
     });
 </script>
