@@ -188,12 +188,12 @@
                 <form action="./routines/cadastroModal.php" method="POST" class="row g-3">
                     <div class="col-12">
                         <label for="emailCliente" class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="name@example.com" id="emailCliente" name="emailCliente" pattern="[a-z]" required>
+                        <input type="email" class="form-control" placeholder="name@example.com" id="emailCliente" name="emailCliente" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="senhaCliente" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senhaCliente" id="senhaCliente" name="senhaCliente" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required>
+                        <input type="password" class="form-control" id="senhaCliente" name="senhaCliente" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required>
                     </div>
 
                     <div class="col-md-6">
@@ -235,12 +235,12 @@
                 <form action="./routines/cadastroModal.php" method="POST" class="row g-3">
                     <div class="col-12">
                         <label for="emailVendedor" class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="name@example.com" id="emailVendedor" name="emailVendedor" pattern="[a-z]" required>
+                        <input type="email" class="form-control" placeholder="name@example.com" id="emailVendedor" name="emailVendedor" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="senhaVendedor" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senhaVendedor" id="senhaVendedor" name="senhaVendedor" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required>
+                        <input type="password" class="form-control" id="senhaVendedor" name="senhaVendedor" minlength="5" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required>
                     </div>
 
                     <div class="col-md-6">

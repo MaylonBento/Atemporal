@@ -1012,9 +1012,9 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
 <script>
     const body = document.getElementsByTagName('body');
 
-    body.addEventListener(“scroll”, lazyload);
-    body.addEventListener(“resize”, lazyload);
-    body.addEventListener(“orientationChange”, lazyload);
+    body.addEventListener('scroll', lazyload);
+    body.addEventListener('resize', lazyload);
+    body.addEventListener('orientationChange', lazyload);
 </script>
 
 </html>

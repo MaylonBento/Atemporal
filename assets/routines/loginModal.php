@@ -34,7 +34,7 @@
 
                 $_SESSION['tipoConta']='Cliente';
 
-                $_SESSION['idUser']=$pass['ID_CLIENTE'];
+                $_SESSION['idUser']=$idCliente['ID_CLIENTE'];
                 header("Location:../../index.php");
             }else {
                 echo    "<script language='javascript' type='text/javascript'>alert('Login inválido! Verifique seu Email e Senha e tente novamente.');window.location.href='../login.php';</script>";
