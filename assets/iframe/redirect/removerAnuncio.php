@@ -15,7 +15,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="../../css/removerAnuncio.css">
+    <link rel="stylesheet" href="../../css/removerAnuncio.css?ver=<?=Date('his')?>">
 
     <!-- Nome da Página -->
     <title>Encerrar Anúncio - ATEMPORAL</title>
@@ -42,7 +42,7 @@
                 <div class="input-row">
                     <span class="mb-2">Selecione o Anúncio a ser removido.</span>
                     <div>
-                        <ul id="anunciosDisponiveis"></ul>
+                        <ul class="anunciosDisponiveis" id="anunciosDisponiveis"></ul>
                     </div>
                 </div>
 
@@ -81,11 +81,14 @@
             let lista = '';
 
             for (i = 0; i < anuncios.length; i++) {
+                lista += '<label for="' + anuncios[i].ID_ANUNCIO + '">';
                 lista += '<li>';
-                lista += '<img src="' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                lista += '<div><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
+                lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
                 lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';   
-                lista += '<span>' + anuncios[i].VALOR_VENDA_ANUNCIO + '</p>';   
+                lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                 lista += '</li>';
+                lista += '</label>';
             }
 
             $('#anunciosDisponiveis').append(lista);

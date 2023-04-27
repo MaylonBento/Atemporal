@@ -69,3 +69,63 @@ input[type=submit]:hover{
     transition: .3s;
     transform: scale(0.98);
 }
+
+.anunciosDisponiveis{
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.anunciosDisponiveis li{
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.anunciosDisponiveis img{
+    height: 150px;
+    width: 150px;
+
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.anunciosDisponiveis p{
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.anunciosDisponiveis span{
+    font-size: 12pt;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: brown;
+}
+
+.anunciosDisponiveis div{
+    width: 100%;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anunciosDisponiveis div p{
+    margin: 0;
+    font-size: 8pt;
+}
+
+.anunciosDisponiveis input[type=radio]{
+    width: 16px;
+    height: 16px;
+}
+
