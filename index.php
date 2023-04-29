@@ -372,7 +372,7 @@ include_once './assets/routines/connection.php';
 
 
             <div class="row-tittle">
-                <span>OS MELHORES COLECIONÁVEIS</span>
+                <span>MELHORES COLECIONÁVEIS</span>
                 <p>AS MELHORES OFERTAS PARA VOCÊ</p>
                 <section></section>
             </div>
@@ -386,7 +386,7 @@ include_once './assets/routines/connection.php';
 
 
             <div class="row-tittle">
-                <span>OS MELHORES UTENSÍLIOS</span>
+                <span>MELHORES UTENSÍLIOS</span>
                 <p>AS MELHORES OFERTAS PARA VOCÊ</p>
                 <section></section>
             </div>
@@ -400,7 +400,7 @@ include_once './assets/routines/connection.php';
 
 
             <div class="row-tittle">
-                <span>OS MELHORES MÓVEIS</span>
+                <span>MELHORES MÓVEIS</span>
                 <p>AS MELHORES OFERTAS PARA VOCÊ</p>
                 <section></section>
             </div>
@@ -415,7 +415,7 @@ include_once './assets/routines/connection.php';
 
 
             <div class="row-tittle">
-                <span>OS MELHORES ELETRÔNICOS</span>
+                <span>MELHORES ELETRÔNICOS</span>
                 <p>AS MELHORES OFERTAS PARA VOCÊ</p>
                 <section></section>
             </div>
@@ -430,7 +430,7 @@ include_once './assets/routines/connection.php';
 
 
             <div class="row-tittle">
-                <span>AS MELHORES ROUPAS</span>
+                <span>MELHORES ROUPAS</span>
                 <p>AS MELHORES OFERTAS PARA VOCÊ</p>
                 <section></section>
             </div>
