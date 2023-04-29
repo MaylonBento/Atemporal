@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-include_once 'connection.php';
+/*  */include_once 'connection.php';
 
 $stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE ID_VENDEDOR=?");
 $stmAnuncios->bind_param('s', $_SESSION['idUser']);

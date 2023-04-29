@@ -38,21 +38,21 @@ if (isset($_POST['signUpCliente'])) {
                 session_start();
                 $_SESSION['login'] = $emailCliente;
                 $_SESSION['tipoConta'] = 'Cliente';
-                
+
                 $stmGetCliente = $connection->prepare("SELECT*FROM TB_CLIENTE WHERE EMAIL_CLIENTE =?");
                 $stmGetCliente->bind_param('s', $emailCliente);
 
-                if ($stmGetCliente->execute()){
+                if ($stmGetCliente->execute()) {
                     $getIdCliente = $stmGetCliente->get_result();
                     $idCliente = $getIdCliente->fetch_assoc();
 
-                    $_SESSION['idUser']=$idCliente['ID_CLIENTE'];
-                    
-                }else {
+                    $_SESSION['idUser'] = $idCliente['ID_CLIENTE'];
+
+                } else {
                     echo "<script language='javascript' type='text/javascript'>alert('Get ID: Ocorreu um erro na inserção dos dados! Verificar DB e arquivo do Cadastro!');window.location.href='../login.php'</script>";
                 }
 
-                
+
                 $_SESSION['idUser'];
 
                 header("Location:../minhaConta.php");
@@ -90,14 +90,14 @@ if (isset($_POST['signUpVendedor'])) {
                 $stmGetVendedor = $connection->prepare("SELECT*FROM TB_VENDEDOR WHERE EMAIL_VENDEDOR=?");
                 $stmGetVendedor->bind_param('s', $emailVendedor);
 
-                if ($stmGetVendedor->execute()){
+                if ($stmGetVendedor->execute()) {
                     $getIdVendedor = $stmGetVendedor->get_result();
                     $idVendedor = $getIdVendedor->fetch_assoc();
 
-                    $_SESSION['idUser']=$idVendedor['ID_VENDEDOR'];
+                    $_SESSION['idUser'] = $idVendedor['ID_VENDEDOR'];
 
-                    echo 'ID User: '.$_SESSION['idUser'];
-                }else {
+                    echo 'ID User: ' . $_SESSION['idUser'];
+                } else {
                     echo "<script language='javascript' type='text/javascript'>alert('Get ID: Ocorreu um erro na inserção dos dados! Verificar DB e arquivo do Cadastro!');window.location.href='../login.php'</script>";
                 }
 

@@ -1,5 +1,5 @@
 <?php
-    include_once '../../routines/connection.php';
+include_once '../../routines/connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="../../css/removerAnuncio.css?ver=<?=Date('his')?>">
+    <link rel="stylesheet" href="../../css/removerAnuncio.css?ver=<?= Date('his') ?>">
 
     <!-- Nome da Página -->
     <title>Encerrar Anúncio - ATEMPORAL</title>
@@ -64,35 +64,35 @@
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <?php
-    
+
 ?>
 
 <script>
 
-    function buscar(){
+    function buscar() {
         $.ajax({
             method: 'POST',
             url: '../../routines/buscarAnuncioModal.php',
         })
 
-        .done(function(anunciosAtivos){
-            anuncios = JSON.parse(anunciosAtivos);
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
 
-            let lista = '';
+                let lista = '';
 
-            for (i = 0; i < anuncios.length; i++) {
-                lista += '<label for="' + anuncios[i].ID_ANUNCIO + '">';
-                lista += '<li>';
-                lista += '<div><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
-                lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
-                lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';   
-                lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
-                lista += '</li>';
-                lista += '</label>';
-            }
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<label for="' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
+                    lista += '<div><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
+                    lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                    lista += '</label>';
+                }
 
-            $('#anunciosDisponiveis').append(lista);
-        })
+                $('#anunciosDisponiveis').append(lista);
+            })
     }
 </script>
 

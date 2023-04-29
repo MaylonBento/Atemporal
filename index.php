@@ -1,5 +1,6 @@
 <?php
- include_once './assets/routines/connection.php';
+    session_start();
+    include_once './assets/routines/connection.php';
 ?>
 
 <!doctype html>

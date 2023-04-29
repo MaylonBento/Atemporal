@@ -12,12 +12,11 @@ $arqNome = $_FILES['arquivo']['name'];
 
 $caminho = 'C:/wamp64/www/atv/img/';
 
-$caminho = $caminho.$arqNome;
+$caminho = $caminho . $arqNome;
 
 
-if (@move_uploaded_file($arqTemp,$caminho)) {
+if (@move_uploaded_file($arqTemp, $caminho)) {
     echo 'Joia';
-}
-else{
+} else {
     echo 'Não joia';
 }
