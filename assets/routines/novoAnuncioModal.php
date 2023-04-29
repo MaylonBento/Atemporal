@@ -11,6 +11,7 @@
     $descricaoAnuncio = filter_input(INPUT_POST, 'descricaoAnuncio');
     $categoriaAnuncio = filter_input(INPUT_POST, 'categoriaAnuncio');
     $precoAnuncio = filter_input(INPUT_POST, 'precoAnuncio');
+    $dataAnuncio = date('Y-m-d');
 
     
     $arqTemp = $_FILES['fotoAnuncio']['tmp_name'];
@@ -32,8 +33,8 @@
 
             if ($stmCheckLimit->num_rows <= 2) {
                 if (@move_uploaded_file($arqTemp,$caminho)) {
-                    $stmAnunciar = $connection->prepare("INSERT INTO TB_ANUNCIO(NOME_ANUNCIO,DESC_ANUNCIO,CATEGORIA_ANUNCIO,VALOR_VENDA_ANUNCIO,ID_VENDEDOR,IMAGEM_ANUNCIO) VALUES(?,?,?,?,?,?)");
-                    $stmAnunciar->bind_param('ssssss', $tituloAnuncio, $descricaoAnuncio, $categoriaAnuncio, $precoAnuncio, $_SESSION['idUser'], $caminho);
+                    $stmAnunciar = $connection->prepare("INSERT INTO TB_ANUNCIO(NOME_ANUNCIO,DESC_ANUNCIO,CATEGORIA_ANUNCIO,VALOR_VENDA_ANUNCIO,ID_VENDEDOR,IMAGEM_ANUNCIO, DTA_ANUNCIO) VALUES(?,?,?,?,?,?,?)");
+                    $stmAnunciar->bind_param('sssssss', $tituloAnuncio, $descricaoAnuncio, $categoriaAnuncio, $precoAnuncio, $_SESSION['idUser'], $caminho, $dataAnuncio);
                     
                     if ($stmAnunciar->execute()) {
                         echo "<script language='javascript' type='text/javascript'>alert('Seu produto foi anúnciado com Sucesso!');window.location.href='../iframe/meusProdutos.php';</script>";

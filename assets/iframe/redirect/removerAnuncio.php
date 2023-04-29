@@ -38,7 +38,7 @@
 
     <main>
         <div class="main-bg">
-            <form action="../../routines/buscarAnuncioModal.php" method="post" id="formRemover">
+            <form action="../../routines/removerAnuncioModal.php" method="post" id="formRemover">
                 <div class="input-row">
                     <span class="mb-2">Selecione o Anúncio a ser removido.</span>
                     <div>
@@ -49,8 +49,8 @@
                 <div class="input-row">
                     <span>Motivo</span>
                     <select name="motivo" id="motivo" required>
-                        <option value="vendido">Já Vendi</option>
-                        <option value="desistencia">Desisti da Venda</option>
+                        <option value="Vendido">Já Vendi</option>
+                        <option value="Desistencia">Desisti da Venda</option>
                     </select>
                 </div>
 

@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
+ include_once './assets/routines/connection.php';
 ?>
 
 <!doctype html>
@@ -277,19 +277,25 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <a href="">
-                                <img src="./references/purple-night.png" class="d-block" alt="..." height="auto"
+                                <img src="./assets/media/banners/primeiro-big.jpg" class="d-block" alt="..." height="auto"
                                     width="100%">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./references/desert-landscape.png" class="d-block" alt="..." height="auto"
+                                <img src="./assets/media/banners/segundo-big.jpg" class="d-block" alt="..." height="auto"
                                     width="100%">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./references/desert-heads.png" class="d-block" alt="..." height="auto"
+                                <img src="./assets/media/banners/terceiro-big.jpg" class="d-block" alt="..." height="auto"
+                                    width="100%">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="">
+                                <img src="./assets/media/banners/quarto-big.jpg" class="d-block" alt="..." height="auto"
                                     width="100%">
                             </a>
                         </div>
@@ -449,7 +455,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
 
                         <!-- Logo e nome da página no Footer -->
                         <div class="banner-meio">
-                            <img src="./references/purple-night.png" alt="Favicon" loading="lazy">
+                            <img src="./assets/media/banners/primeiro-small.jpg" alt="Favicon" loading="lazy">
                         </div>
 
                     </div>
@@ -594,7 +600,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'Atemporal');
 
                     <!-- Logo e nome da página no Footer -->
                     <div class="banner-meio">
-                        <img src="./references/desert-landscape.png" alt="Favicon" loading="lazy">
+                        <img src="./assets/media/banners/terceiro-small.jpg" alt="Favicon" loading="lazy">
                     </div>
 
                 </div>
