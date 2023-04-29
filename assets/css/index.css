@@ -273,15 +273,11 @@ main{
 
 
 .banner-meio-bg{
-    background-color: transparent;
     width: 1150px;
     height: auto;
 }
 
 .banner-meio-content{
-    display: flex;
-    justify-content: space-around;
-
     width: 100%;
     height: auto;
 }
@@ -289,19 +285,13 @@ main{
 .banner-meio{
     width: 100%;
     height: auto;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .banner-meio img{
     height: 180px;
     width: 100%;
 
-    background-size: cover;
-    
+    object-fit: contain;
 }
 
 
@@ -394,21 +384,21 @@ main{
 }
 
 .showcase-recentes ul{
-    width: 100%;
+    width: auto;
     height: 250px;
     padding: 0;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .showcase-recentes li{
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 170px;
     margin: 5px;
     border: 1px solid lightgray;
-    border-radius: 4px;
+    border-radius: 1rem;
     padding: 10px;
     overflow: hidden;
 
@@ -427,7 +417,6 @@ main{
     height: 150px;
 
     background: white;
-    background-size: cover;
     object-fit: contain;
     margin-bottom: 10px;
 }
@@ -470,7 +459,7 @@ main{
     width: 100%;
     margin: 5px;
     border: 1px solid lightgray;
-    border-radius: 4px;
+    border-radius: 1rem;
     padding: 10px;
 
     list-style: none;
@@ -508,33 +497,27 @@ main{
 
 
 .showcase-melhores{
-    height: auto;
-    width: 100%;
-
     margin-bottom: 40px;
 }
 
 .showcase-melhores ul{
-    width: 100%;
+    width: auto;
     height: 250px;
     padding: 0;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    overflow: auto;
-    overflow-y: hidden;
+    justify-content: space-around;
 }
 
 .showcase-melhores li{
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 170px;
     margin: 5px;
     border: 1px solid lightgray;
     border-radius: 4px;
     padding: 10px;
-    
+    overflow: hidden;
 
     list-style: none;
     font-size: 12pt;
@@ -551,7 +534,6 @@ main{
     height: 150px;
 
     background: white;
-    background-size: cover;
     object-fit: contain;
     margin-bottom: 10px;
 }
@@ -719,7 +701,7 @@ footer{
 
 
 @media screen and (max-width: 1150px){
-    .fixed-nav, .products-showcase, .categories ul, .footer-bg{
+    .fixed-nav, .products-showcase, .categories ul, .footer-bg, .banner-meio-bg{
         width: 95%;
     }
 

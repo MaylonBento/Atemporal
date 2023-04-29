@@ -78,6 +78,15 @@ input[type=submit]:hover{
     justify-content: space-around;
 }
 
+.anunciosDisponiveis ul{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid aqua;
+}
+
 .anunciosDisponiveis li{
     border: 1px solid lightgray;
     border-radius: 1rem;
@@ -90,10 +99,10 @@ input[type=submit]:hover{
 }
 
 .anunciosDisponiveis img{
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
 
-    background-size: cover;
+    object-fit: contain;
     border-radius: 1rem;
 }
 
@@ -110,15 +119,6 @@ input[type=submit]:hover{
     color: brown;
 }
 
-.anunciosDisponiveis div{
-    width: 100%;
-    margin-bottom: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .anunciosDisponiveis div p{
     margin: 0;
     font-size: 8pt;
@@ -129,3 +129,9 @@ input[type=submit]:hover{
     height: 16px;
 }
 
+.input-radio{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}

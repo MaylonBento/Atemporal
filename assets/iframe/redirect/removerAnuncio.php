@@ -14,7 +14,7 @@ include_once '../../routines/connection.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <!-- CSS do Index -->
+    <!-- CSS do Remover Anuncio -->
     <link rel="stylesheet" href="../../css/removerAnuncio.css?ver=<?= Date('his') ?>">
 
     <!-- Nome da Página -->
@@ -41,9 +41,7 @@ include_once '../../routines/connection.php';
             <form action="../../routines/removerAnuncioModal.php" method="post" id="formRemover">
                 <div class="input-row">
                     <span class="mb-2">Selecione o Anúncio a ser removido.</span>
-                    <div>
-                        <ul class="anunciosDisponiveis" id="anunciosDisponiveis"></ul>
-                    </div>
+                    <ul class="anunciosDisponiveis" id="anunciosDisponiveis"></ul>
                 </div>
 
                 <div class="input-row">
@@ -63,9 +61,6 @@ include_once '../../routines/connection.php';
 
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<?php
-
-?>
 
 <script>
 
@@ -83,7 +78,7 @@ include_once '../../routines/connection.php';
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<label for="' + anuncios[i].ID_ANUNCIO + '">';
                     lista += '<li>';
-                    lista += '<div><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
+                    lista += '<div class="input-radio"><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
                     lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';

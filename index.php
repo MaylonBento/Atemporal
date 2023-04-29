@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include_once './assets/routines/connection.php';
+session_start();
+include_once './assets/routines/connection.php';
 ?>
 
 <!doctype html>
@@ -17,7 +17,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="./assets/css/index.css?ver=<?=Date('his')?>">
+    <link rel="stylesheet" href="./assets/css/index.css?ver=<?= Date('his') ?>">
 
 
 
@@ -37,7 +37,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body onload="recentes(), antigos(), colecionaveis(), utensilios(), moveis(), eletronicos(), roupas()">
     <header>
 
         <!-- Redes Sociais / Área do Cliente -->
@@ -278,20 +278,20 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <a href="">
-                                <img src="./assets/media/banners/primeiro-big.jpg" class="d-block" alt="..." height="auto"
-                                    width="100%">
+                                <img src="./assets/media/banners/primeiro-big.jpg" class="d-block" alt="..."
+                                    height="auto" width="100%">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./assets/media/banners/segundo-big.jpg" class="d-block" alt="..." height="auto"
-                                    width="100%">
+                                <img src="./assets/media/banners/segundo-big.jpg" class="d-block" alt="..."
+                                    height="auto" width="100%">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./assets/media/banners/terceiro-big.jpg" class="d-block" alt="..." height="auto"
-                                    width="100%">
+                                <img src="./assets/media/banners/terceiro-big.jpg" class="d-block" alt="..."
+                                    height="auto" width="100%">
                             </a>
                         </div>
                         <div class="carousel-item">
@@ -326,140 +326,19 @@
             <div class="products-showcase">
 
                 <!-- Anúncios Recentes -->
-
-                <?php
-
-                $produtoRecente1 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 0,1");
-                if ($produtoRecente1) {
-                    while ($recenteRes1 = mysqli_fetch_array($produtoRecente1)) {
-                        $nome_recente1 = $recenteRes1['NOME_ANUNCIO'];
-                        $imagem_recente1 = $recenteRes1['IMAGEM_ANUNCIO'];
-                        $preco_recente1 = $recenteRes1['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoRecente2 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 1,1");
-                if ($produtoRecente2) {
-                    while ($recenteRes2 = mysqli_fetch_array($produtoRecente2)) {
-                        $nome_recente2 = $recenteRes2['NOME_ANUNCIO'];
-                        $imagem_recente2 = $recenteRes2['IMAGEM_ANUNCIO'];
-                        $preco_recente2 = $recenteRes2['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoRecente3 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 2,1");
-                if ($produtoRecente3) {
-                    while ($recenteRes3 = mysqli_fetch_array($produtoRecente3)) {
-                        $nome_recente3 = $recenteRes3['NOME_ANUNCIO'];
-                        $imagem_recente3 = $recenteRes3['IMAGEM_ANUNCIO'];
-                        $preco_recente3 = $recenteRes3['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoRecente4 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 3,1");
-                if ($produtoRecente4) {
-                    while ($recenteRes4 = mysqli_fetch_array($produtoRecente4)) {
-                        $nome_recente4 = $recenteRes4['NOME_ANUNCIO'];
-                        $imagem_recente4 = $recenteRes4['IMAGEM_ANUNCIO'];
-                        $preco_recente4 = $recenteRes4['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoRecente5 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 4,1");
-                if ($produtoRecente5) {
-                    while ($recenteRes5 = mysqli_fetch_array($produtoRecente5)) {
-                        $nome_recente5 = $recenteRes5['NOME_ANUNCIO'];
-                        $imagem_recente5 = $recenteRes5['IMAGEM_ANUNCIO'];
-                        $preco_recente5 = $recenteRes5['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoRecente6 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO DESC LIMIT 5,1");
-                if ($produtoRecente6) {
-                    while ($recenteRes6 = mysqli_fetch_array($produtoRecente6)) {
-                        $nome_recente6 = $recenteRes6['NOME_ANUNCIO'];
-                        $imagem_recente6 = $recenteRes6['IMAGEM_ANUNCIO'];
-                        $preco_recente6 = $recenteRes6['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                ?>
-
-
-
                 <div class="showcase-recentes">
-                    <ul>
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente1 ?>" alt="Produto 1">
-                            <p>
-                                <?= $nome_recente1 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente1 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente2 ?>" alt="Produto 2">
-                            <p>
-                                <?= $nome_recente2 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente2 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente3 ?>" alt="Produto 3">
-                            <p>
-                                <?= $nome_recente3 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente3 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente4 ?>" alt="Produto 4">
-                            <p>
-                                <?= $nome_recente4 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente4 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente5 ?>" alt="Produto 5">
-                            <p>
-                                <?= $nome_recente5 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente5 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_recente6 ?>" alt="Produto 6">
-                            <p>
-                                <?= $nome_recente6 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_recente6 ?>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul id="anunciosRecentesUl"></ul>
                 </div>
+            </div>
 
-                <div class="banner-meio-bg">
-                    <div class="banner-meio-content">
+            <div class="banner-meio-bg">
+                <div class="banner-meio-content">
 
-                        <!-- Logo e nome da página no Footer -->
-                        <div class="banner-meio">
-                            <img src="./assets/media/banners/primeiro-small.jpg" alt="Favicon" loading="lazy">
-                        </div>
-
+                    <!-- Logo e nome da página no Footer -->
+                    <div class="banner-meio">
+                        <img src="./assets/media/banners/primeiro-small.jpg" alt="Favicon" loading="lazy">
                     </div>
+
                 </div>
             </div>
 
@@ -470,127 +349,10 @@
             </div>
 
             <div class="products-showcase">
+
                 <!-- Ofertas Antigas -->
-
-                <?php
-
-                $produtoAntigos1 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 0,1");
-                if ($produtoAntigos1) {
-                    while ($antigosRes1 = mysqli_fetch_array($produtoAntigos1)) {
-                        $nome_antigo1 = $antigosRes1['NOME_ANUNCIO'];
-                        $imagem_antigo1 = $antigosRes1['IMAGEM_ANUNCIO'];
-                        $preco_antigo1 = $antigosRes1['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoAntigos2 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 1,1");
-                if ($produtoAntigos2) {
-                    while ($antigoRes2 = mysqli_fetch_array($produtoAntigos2)) {
-                        $nome_antigo2 = $antigoRes2['NOME_ANUNCIO'];
-                        $imagem_antigo2 = $antigoRes2['IMAGEM_ANUNCIO'];
-                        $preco_antigo2 = $antigoRes2['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoAntigos3 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 2,1");
-                if ($produtoAntigos3) {
-                    while ($antigoRes3 = mysqli_fetch_array($produtoAntigos3)) {
-                        $nome_antigo3 = $antigoRes3['NOME_ANUNCIO'];
-                        $imagem_antigo3 = $antigoRes3['IMAGEM_ANUNCIO'];
-                        $preco_antigo3 = $antigoRes3['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoAntigos4 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 3,1");
-                if ($produtoAntigos4) {
-                    while ($antigoRes4 = mysqli_fetch_array($produtoAntigos4)) {
-                        $nome_antigo4 = $antigoRes4['NOME_ANUNCIO'];
-                        $imagem_antigo4 = $antigoRes4['IMAGEM_ANUNCIO'];
-                        $preco_antigo4 = $antigoRes4['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoAntigos5 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 4,1");
-                if ($produtoAntigos5) {
-                    while ($antigoRes5 = mysqli_fetch_array($produtoAntigos5)) {
-                        $nome_antigo5 = $antigoRes5['NOME_ANUNCIO'];
-                        $imagem_antigo5 = $antigoRes5['IMAGEM_ANUNCIO'];
-                        $preco_antigo5 = $antigoRes5['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                $produtoAntigos6 = mysqli_query($connection, "SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO ASC LIMIT 5,1");
-                if ($produtoAntigos6) {
-                    while ($antigoRes6 = mysqli_fetch_array($produtoAntigos6)) {
-                        $nome_antigo6 = $antigoRes6['NOME_ANUNCIO'];
-                        $imagem_antigo6 = $antigoRes6['IMAGEM_ANUNCIO'];
-                        $preco_antigo6 = $antigoRes6['VALOR_VENDA_ANUNCIO'];
-                    }
-                }
-
-                ?>
                 <div class="showcase-antigos">
-                    <ul>
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo1 ?>" alt="Produto 1">
-                            <p>
-                                <?= $nome_antigo1 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo1 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo2 ?>" alt="Produto 2">
-                            <p>
-                                <?= $nome_antigo2 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo2 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo3 ?>" alt="Produto 3">
-                            <p>
-                                <?= $nome_antigo3 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo3 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo4 ?>" alt="Produto 4">
-                            <p>
-                                <?= $nome_antigo4 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo4 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo5 ?>" alt="Produto 5">
-                            <p>
-                                <?= $nome_antigo5 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo5 ?>
-                            </span>
-                        </li>
-
-                        <li>
-                            <img src="<?= './assets/media/' . $imagem_antigo6 ?>" alt="Produto 6">
-                            <p>
-                                <?= $nome_antigo6 ?>
-                            </p>
-                            <span>R$
-                                <?= $preco_antigo6 ?>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul id="anunciosAntigosUl"></ul>
                 </div>
             </div>
 
@@ -618,53 +380,7 @@
 
             <div class="products-showcase">
                 <div class="showcase-melhores">
-                    <ul>
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 1">
-                            <p>Produto 1</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 2">
-                            <p>Produto 2</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 3</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 4</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 5</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 6</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 7</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 8</p>
-                        </li>
-
-                        <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
-                        </div>
-
-                    </ul>
-
+                    <ul id="anunciosColecionaveisUl"></ul>
                 </div>
             </div>
 
@@ -677,53 +393,7 @@
 
             <div class="products-showcase">
                 <div class="showcase-melhores">
-                    <ul>
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 1">
-                            <p>Produto 1</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 2">
-                            <p>Produto 2</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 3</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 4</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 5</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 6</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 7</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 8</p>
-                        </li>
-
-                        <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
-                        </div>
-
-
-                    </ul>
+                    <ul id="anunciosUtensiliosUl"></ul>
                 </div>
             </div>
 
@@ -737,53 +407,7 @@
 
             <div class="products-showcase">
                 <div class="showcase-melhores">
-                    <ul>
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 1">
-                            <p>Produto 1</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 2">
-                            <p>Produto 2</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 3</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 4</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 5</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 6</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 7</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 8</p>
-                        </li>
-
-                        <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
-                        </div>
-
-
-                    </ul>
+                    <ul id="anunciosMoveisUl"></ul>
                 </div>
             </div>
 
@@ -798,52 +422,7 @@
 
             <div class="products-showcase">
                 <div class="showcase-melhores">
-                    <ul>
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 1">
-                            <p>Produto 1</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 2">
-                            <p>Produto 2</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 3</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 4</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 5</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 6</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 7</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 8</p>
-                        </li>
-
-                        <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
-                        </div>
-
-                    </ul>
+                    <ul id="anunciosEletronicosUl"></ul>
                 </div>
             </div>
 
@@ -858,55 +437,8 @@
 
             <div class="products-showcase">
                 <div class="showcase-melhores">
-                    <ul>
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 1">
-                            <p>Produto 1</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 2">
-                            <p>Produto 2</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 3</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 4</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 5</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 3">
-                            <p>Produto 6</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 4">
-                            <p>Produto 7</p>
-                        </li>
-
-                        <li>
-                            <img src="./references/x.jpg" alt="Produto 5">
-                            <p>Produto 8</p>
-                        </li>
-
-                        <div class="ver-mais">
-                            <a href="https://www.instagram.com/1814_atemporal_antiguidades"> <span>Ver Mais</span></a>
-                        </div>
-
-                    </ul>
+                    <ul id="anunciosRoupasUl"></ul>
                 </div>
-
-
             </div>
         </div>
 
@@ -1016,12 +548,171 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 
-<script>
-    const body = document.getElementsByTagName('body');
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    body.addEventListener('scroll', lazyload);
-    body.addEventListener('resize', lazyload);
-    body.addEventListener('orientationChange', lazyload);
+<script>
+
+    function recentes() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/recentesModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosRecentesUl').append(lista);
+            })
+    }
+
+    function antigos() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/antigosModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosAntigosUl').append(lista);
+            })
+    }
+
+    function colecionaveis() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/colecionaveisModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosColecionaveisUl').append(lista);
+            })
+    }
+
+    function utensilios() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/utensiliosModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosUtensiliosUl').append(lista);
+            })
+    }
+
+    function moveis() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/moveisModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosMoveisUl').append(lista);
+            })
+    }
+
+    function eletronicos() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/eletronicosModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosEletronicosUl').append(lista);
+            })
+    }
+
+    function roupas() {
+        $.ajax({
+            method: 'POST',
+            url: './assets/routines/index/roupasModal.php',
+        })
+
+            .done(function (anunciosAtivos) {
+                anuncios = JSON.parse(anunciosAtivos);
+
+                let lista = '';
+
+                for (i = 0; i < anuncios.length; i++) {
+                    lista += '<li>';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
+                    lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
+                    lista += '</li>';
+                }
+
+                $('#anunciosRoupasUl').append(lista);
+            })
+    }
 </script>
 
 </html>
