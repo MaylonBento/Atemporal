@@ -385,8 +385,10 @@ main{
 
 .showcase-recentes ul{
     width: 100%;
-    height: 250px;
-    padding: 0;
+    height: 300px;
+    padding: 20px 10px;
+    border-radius: 1rem;
+    background-color: white;
 
     display: flex;
     align-items: center;
@@ -398,8 +400,8 @@ main{
     width: 170px;
     margin: 5px;
     border: 1px solid lightgray;
-    border-radius: 1rem;
     padding: 10px;
+    background-color: #eeeeee;
 
     list-style: none;
     font-size: 12pt;
@@ -426,7 +428,7 @@ main{
 }
 
 .showcase-recentes span{
-    color: black;
+    color: #303030;
     font-size: 14pt;
     margin-top: -15px;
 }
@@ -443,7 +445,9 @@ main{
 .showcase-antigos ul{
     width: 100%;
     height: 450px;
-    padding: 0;
+    padding: 20px 10px;
+    background-color: white;
+    border-radius: 1rem;
 
     display: flex;
     justify-content: space-between;
@@ -458,12 +462,12 @@ main{
     width: 100%;
     margin: 5px;
     border: 1px solid lightgray;
-    border-radius: 1rem;
     padding: 10px;
+    background-color: #eeeeee;
 
     list-style: none;
     font-size: 12pt;
-    color: black;
+    color: #303030;
 
     display: flex;
     flex-direction: column;
@@ -472,8 +476,8 @@ main{
 }
 
 .showcase-antigos img{
-    width: 340px;
-    height: 340px;
+    width: 250px;
+    height: 250px;
 
     background: white;
     background-size: cover;
@@ -487,7 +491,7 @@ main{
 }
 
 .showcase-antigos span{
-    color: black;
+    color: #303030;
     font-size: 16pt;
     margin-top: -15px;
 }
@@ -500,23 +504,24 @@ main{
 }
 
 .showcase-melhores ul{
-    width: auto;
-    height: 250px;
-    padding: 0;
+    width: 100%;
+    height: 300px;
+    padding: 20px 10px;
+    border-radius: 1rem;
+    background-color: white;
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .showcase-melhores li{
-    height: auto;
+    height: 100%;
     width: 170px;
     margin: 5px;
     border: 1px solid lightgray;
-    border-radius: 4px;
     padding: 10px;
-    overflow: hidden;
+    background-color: #eeeeee;
 
     list-style: none;
     font-size: 12pt;

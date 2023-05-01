@@ -73,6 +73,7 @@ input[type=submit]:hover{
 .anunciosDisponiveis{
     width: 100%;
     margin-top: 20px;
+    background-color: transparent;
 
     display: flex;
     justify-content: space-around;
@@ -80,17 +81,17 @@ input[type=submit]:hover{
 
 .anunciosDisponiveis ul{
     width: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 10px;
 
     display: flex;
-    justify-content: space-between;
-
-    border: 1px solid aqua;
 }
 
 .anunciosDisponiveis li{
     border: 1px solid lightgray;
-    border-radius: 1rem;
     padding: 10px;
+    background-color: #eeeeeeee;
 
     display: flex;
     flex-direction: column;
@@ -101,6 +102,8 @@ input[type=submit]:hover{
 .anunciosDisponiveis img{
     height: 180px;
     width: 180px;
+    background-color: white;
+    margin-top: 10px;
 
     object-fit: contain;
     border-radius: 1rem;
@@ -116,7 +119,7 @@ input[type=submit]:hover{
     font-size: 12pt;
     margin-top: 0px;
     margin-bottom: 10px;
-    color: brown;
+    color: #303030;
 }
 
 .anunciosDisponiveis div p{
