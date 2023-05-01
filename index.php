@@ -193,7 +193,7 @@ include_once './assets/routines/connection.php';
                     </li>
 
                     <li>
-                        <a href="">
+                        <a href="./assets/verTudo.php">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                 <path
