@@ -29,15 +29,15 @@ if (isset($_POST['removerAnuncio'])) {
             if ($stmMover->execute()) {
                 echo "<script language='javascript' type='text/javascript'>alert('Seu anúncio foi removido com sucesso!');window.location.href='../iframe/meusProdutos.php'</script>";
             } else {
-                echo "<script language='javascript' type='text/javascript'>alert('Ocorreu um erro na inserção dos dados! Verificar DB e os Dados fornecidos!');window.location.href='../iframe/meusProdutos.php'</script>";
+                echo "<script language='javascript' type='text/javascript'>alert('Você precisa Selecionar um Anúncio a ser Removido!');window.location.href='../iframe/redirect/removerAnuncio.php'</script>";
             }
 
         } else {
-            echo "<script language='javascript' type='text/javascript'>alert('Ocorreu um erro ao Remover Dados! Verificar DB e os Dados fornecidos!');window.location.href='../iframe/meusProdutos.php'</script>";
+            echo "<script language='javascript' type='text/javascript'>alert('Ocorreu um erro ao Remover Dados! Verificar DB e os Dados fornecidos!');window.location.href='../iframe/redirect/removerAnuncio.php'</script>";
         }
 
     } else {
-        echo "<script language='javascript' type='text/javascript'>alert('Você precisa Selecionar um Anúncio a ser Removido!');window.location.href='../iframe/meusProdutos.php'</script>";
+        echo "<script language='javascript' type='text/javascript'>alert('Você precisa Selecionar um Anúncio a ser Removido!');window.location.href='../iframe/redirect/removerAnuncio.php'</script>";
     }
 }
 ?>
