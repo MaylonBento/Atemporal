@@ -1,7 +1,3 @@
-<?php
-include_once './routines/verTudo/todosProdutosModal.php';
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +29,7 @@ include_once './routines/verTudo/todosProdutosModal.php';
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="todosProdutos()">
     <header>
 
         <!-- Redes Sociais / Área do Cliente -->
