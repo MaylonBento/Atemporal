@@ -426,6 +426,9 @@ main{
 .showcase-recentes p{
     color: gray;
     font-size: 12pt;
+    overflow: hidden;
+    height: 26px;
+    text-align: center;
 }
 
 .showcase-recentes span{
@@ -489,6 +492,9 @@ main{
 .showcase-antigos p{
     color: gray;
     font-size: 14pt;
+    overflow: hidden;
+    height: 28px;
+    text-align: center;
 }
 
 .showcase-antigos span{
@@ -546,6 +552,9 @@ main{
 .showcase-melhores p{
     color: gray;
     font-size: 12pt;
+    overflow: hidden;
+    height: 24px;
+    text-align: center;
 }
 
 .showcase-melhores span{

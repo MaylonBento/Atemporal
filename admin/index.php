@@ -1,7 +1,3 @@
-<?php
-include_once './routines/comLogin.php';
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -16,15 +12,15 @@ include_once './routines/comLogin.php';
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="./css/login.css?ver=<?= Date('his') ?>">
+    <link rel="stylesheet" href="../assets/css/loginAdmin.css?ver=<?= Date('his') ?>">
 
 
 
     <!-- Nome da Página -->
-    <title>Login - ATEMPORAL</title>
+    <title>Painel Administrativo - ATEMPORAL</title>
 
     <!-- Ícone da Página -->
-    <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/media/logo.png" type="image/x-icon">
 
 
 
@@ -96,7 +92,7 @@ include_once './routines/comLogin.php';
             <div class="fixed-nav">
                 <div class="shop-name">
                     <a href="../index.php">
-                        <img src="./media/logo.png" alt="Atemporal Antiguidades" height="50px" width="auto">
+                        <img src="../assets/media/logo.png" alt="Atemporal Antiguidades" height="50px" width="auto">
                     </a>
                 </div>
 
@@ -188,11 +184,11 @@ include_once './routines/comLogin.php';
                 <h1>LOGIN</h1>
                 <span>Bem-vindo(a)</span>
 
-                <p>Já tem cadastro no nosso site? Basta efetuar o seu Login com e-mail e senha.</p>
+                <p>Painel Administrativo Atemporal.</p>
             </div>
 
             <div class="login-form">
-                <form action="./routines/loginModal.php" method="POST">
+                <form action="./assets/routines/loginModal.php" method="POST">
                     <div class="form-fields mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -214,8 +210,6 @@ include_once './routines/comLogin.php';
                     <a href="./resetpassword.php" class="reset-password mb-5">Esqueceu sua senha?</a>
 
                     <input type="submit" class="mb-2" value="Entrar" name="btnEntrar" id="btnEntrar">
-
-                    <a href="./cadastro.php">Criar conta</a>
                 </form>
             </div>
         </div>

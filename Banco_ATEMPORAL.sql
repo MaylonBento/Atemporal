@@ -54,7 +54,20 @@ CREATE TABLE IF NOT EXISTS `tb_anuncio` (
 INSERT INTO `tb_anuncio` (`ID_ANUNCIO`, `NOME_ANUNCIO`, `CATEGORIA_ANUNCIO`, `DESC_ANUNCIO`, `VALOR_VENDA_ANUNCIO`, `ID_VENDEDOR`, `STATUS_ANUNCIO`, `QTD_ANUNCIO`, `IMAGEM_ANUNCIO`, `DTA_ANUNCIO`) VALUES
 (1, 'Relógio Antigo', 'utensilios', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto odit incidunt sequi excepturi quam quaerat earum repellat repellendus magni adipisci quas cumque delectus dicta accusantium porro, saepe dolorum ducimus ipsum.', '300.50', 1, NULL, NULL, '../media/fotoAnuncio/ce70472e0c228ef7d9b8983d6b7d1cb7', '2023-04-10'),
 (2, 'Telefone Discador', 'eletronicos', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto odit incidunt sequi excepturi quam quaerat earum repellat repellendus magni adipisci quas cumque delectus dicta accusantium porro, saepe dolorum ducimus ipsum.', '100.00', 1, NULL, NULL, '../media/fotoAnuncio/33236bc9a205b4bdc9f5687d9a78a88c', '2023-04-10'),
-(3, 'Televisão', 'eletronicos', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto odit incidunt sequi excepturi quam quaerat earum repellat repellendus magni adipisci quas cumque delectus dicta accusantium porro, saepe dolorum ducimus ipsum.', '250.00', 1, NULL, NULL, '../media/fotoAnuncio/881502c7655ea251c21d05125e2585a3', '2023-04-10');
+(3, 'Televisão', 'eletronicos', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto odit incidunt sequi excepturi quam quaerat earum repellat repellendus magni adipisci quas cumque delectus dicta accusantium porro, saepe dolorum ducimus ipsum.', '250.00', 1, NULL, NULL, '../media/fotoAnuncio/881502c7655ea251c21d05125e2585a3', '2023-04-10'),
+(4, 'CÃ©dulas Brasileiras Antigas Cem Mil Cruzeiros Juscelino', 'colecionaveis', 'CÃ‰DULAS BRASILEIRAS ANTIGAS DE JUSCELINO KUBITSCHEK\r\n1 - CÃ©dula (01) de 100 Cruzados - Juscelino Kubitschek - No. Se. A1680034504A ... (1986).\r\n2 - CÃ©dulas (02) de 100000 Cem Mil Cruzeiros - Juscelino Kubitschek - Nos. Se. A0687028751A, e, A2592076430A ... (1985) .\r\n3 - CÃ©dula (01) de 100000 Cem Mil Cruzeiros (Carimbo de 100 Cruzados) - Juscelino Kubitschek - No. Se. A6092021833A ... (1986) .', '100.00', 2, NULL, NULL, '../media/fotoAnuncio/99dfe4ff7b9ef0a6a6beeae1aca834a5', '2023-05-02'),
+(5, 'CÃ©dulas Antigas', 'colecionaveis', 'notas nacionais e estrangeiras, em Ã³timo estado de conservaÃ§Ã£o.\r\n13 cÃ©dulas prontas para serem adquiridas.', '150.00', 2, NULL, NULL, '../media/fotoAnuncio/473eaf1f133ed10cc29d50a66bb462d4', '2023-05-02'),
+(6, 'Orelhão vermelho original antigo telesp anos 90', 'colecionaveis', 'orelhão original de colecionador da telesp\r\npossui cabo para instalação de telefone fixo\r\n\r\npeso: 10,5kg\r\nenvio a combinar', '464.90', 2, NULL, NULL, '../media/fotoAnuncio/5b29d0079184d63538efd1efdc80e81a', '2023-05-02'),
+(7, 'Vitrola Antiga', 'eletronicos', 'PHILIPS ANTIGA VITROLA PHILIPS 547 (APRESENTA DESGASTE NA MADEIRA),FUNCIONANDO, NO ESTADO. MEDINDO: 35 X 31 X 18 CM', '300.00', 3, NULL, NULL, '../media/fotoAnuncio/643c74a07205ae15c9e45f57f0378b83', '2023-05-02'),
+(8, 'Boneca em Porcelana', 'colecionaveis', 'Boneca Antiga - Sentada - Rosto, Braços, Pernas em Porcelana - Corpo em tecido - med. 60cm - obs. a cadeira não faz parte do lote', '599.00', 3, NULL, NULL, '../media/fotoAnuncio/1159f071fc6c7153b63fe0866b6b6566', '2023-05-02'),
+(9, 'Game Retro', 'colecionaveis', 'uper Game Box - Video Game Retro Com Jogos Antigos 64gb ( Esse aparelho box tbm pode baixar Netflix, YouTube e outras coisas mais, porque ele tem Play Story)', '500.00', 3, NULL, NULL, '../media/fotoAnuncio/0c7818eb2c498f20bd210c6075763eae', '2023-05-02'),
+(10, 'Game Retro 400 jogos', 'eletronicos', 'Mini Game Sup Retrô Portatil 400 Jogos Antigos Anos.\r\n', '69.00', 4, NULL, NULL, '../media/fotoAnuncio/a27b3e2c1275fa3f773eb6bd564bd3e4', '2023-05-02'),
+(11, 'Lustre Antigo de Cristal', 'utensilios', 'Cristal - Elegante e clássico lustre antigo em cristal com 5 braços.', '600.00', 4, NULL, NULL, '../media/fotoAnuncio/1e7b0ececff51c73dba566c9f4ceb1d0', '2023-05-02'),
+(12, 'Tapete Bulgaro ', 'utensilios', 'Tapete bulgaro com desenho de Ardebil -med. 2,05 x 1,28 = 2,62 m². \r\nArdebil Rugs, par de tapetes do século XVI, que se encontram no Victoria and Albert Museum, Londres.', '200.00', 5, NULL, NULL, '../media/fotoAnuncio/504b1b1d863538e54499254cd6e2df96', '2023-05-02'),
+(13, 'Abaju Retro', 'utensilios', 'abajur antigo retrô, sensível ao toque, 3 modos de iluminação', '100.00', 5, NULL, NULL, '../media/fotoAnuncio/75019646e77e0fac2b60dfd5c002d817', '2023-05-02'),
+(14, 'Crinolina para volume em vestido curto de festa', 'vestuario', 'Crinolina para volume em vestido curto de festa.\r\nDisponível e em ótimo estado.', '200.00', 6, NULL, NULL, '../media/fotoAnuncio/ce26d79d1efd81b182d05cbefadc61d4', '2023-05-02'),
+(15, 'Vestido Midi Retrô De Manga Floral', 'vestuario', 'Vestido Midi Retrô De Manga Floral.\r\nLindíssimos vestidos estampados florais estilo Pin Up, retrô, com saia rodada, acinturado, de meia manga e decote redondo. Para ficar armado, use com Anágua.\r\n', '180.00', 6, NULL, NULL, '../media/fotoAnuncio/f6d2e088a7b0460ec59557c0a94a983e', '2023-05-02'),
+(16, 'Vestido Retrô Preto P10', 'vestuario', 'Vestido Retrô Preto P10.\r\ninformações: Algodão/Poliéster, Acompanha a faixa, Sem Manga, Altura do Joelho, ', '160.00', 6, NULL, NULL, '../media/fotoAnuncio/99138c4685810f72c8e9b7c9b1a51cfd', '2023-05-02');
 
 -- --------------------------------------------------------
 
@@ -154,17 +167,18 @@ CREATE TABLE IF NOT EXISTS `tb_endereco` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_usuario`
+-- Estrutura da tabela `tb_admin`
 --
 
-DROP TABLE IF EXISTS `tb_usuario`;
-CREATE TABLE IF NOT EXISTS `tb_usuario` (
-  `ID_USER` int NOT NULL AUTO_INCREMENT,
-  `EMAIL_USER` varchar(60) NOT NULL,
-  `SENHA_USER` varchar(255) NOT NULL,
-  `STATUS_USER` int NOT NULL,
-  PRIMARY KEY (`ID_USER`)
+DROP TABLE IF EXISTS `tb_admin`; 
+CREATE TABLE IF NOT EXISTS `tb_admin` (
+  `ID_ADMIN` int NOT NULL AUTO_INCREMENT,
+  `EMAIL_ADMIN` varchar(60) NOT NULL,
+  `SENHA_ADMIN` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID_ADMIN`)
 );
+
+INSERT INTO `tb_admin` (`ID_ADMIN`, `EMAIL_ADMIN`, `SENHA_ADMIN`) VALUES(1, 'admin@admin.com', '$2y$10$l85NSzsqScdY8B6jBaIy9.gmviemY//qHYZFYxaBubs44ZLGZWK4K');
 
 -- --------------------------------------------------------
 
