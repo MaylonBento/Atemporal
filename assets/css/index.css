@@ -414,6 +414,10 @@ main{
     align-items: center;
 }
 
+.showcase-recentes li:hover{
+    cursor: pointer;
+}
+
 .showcase-recentes img{
     width: 150px;
     height: 150px;
@@ -479,6 +483,10 @@ main{
     align-items: center;
 }
 
+.showcase-antigos li:hover{
+    cursor: pointer;
+}
+
 .showcase-antigos img{
     width: 250px;
     height: 250px;
@@ -538,6 +546,10 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.showcase-melhores li:hover{
+    cursor: pointer;
 }
 
 .showcase-melhores img{

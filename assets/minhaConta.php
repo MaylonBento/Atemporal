@@ -331,7 +331,7 @@ include_once './routines/connection.php';
             iframe.src = './iframe/dadosVendedor.php';
         } else {
             iframe.src = './iframe/dadosCliente.php';
-            /* menuLateral.removeChild(menuLateral.children[1]); */
+            menuLateral.removeChild(menuLateral.children[1]);
         }
     }
 
