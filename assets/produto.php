@@ -27,7 +27,7 @@ if (empty($_COOKIE['produtoId'])) {
 
 
     <!-- Nome da Página -->
-    <title><?php echo $_COOKIE=['nomePagina'];?> - ATEMPORAL</title>
+    <title></title>
 
     <!-- Ícone da Página -->
     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
@@ -273,10 +273,10 @@ if (empty($_COOKIE['produtoId'])) {
                     nome += '<span class="nome-anuncio">' + produto[i].NOME_ANUNCIO + '</span>';
                     data += '<p>Anúnciado em: ' + produto[i].DTA_ANUNCIO + '</p>'
                     preco += '<span class="valor-anuncio"> R$ ' + produto[i].VALOR_VENDA_ANUNCIO + '</span>';
-                    imagem += '<img class="imagem-anuncio" src="./routines/' + produto[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
-                    descricao += '<p class="descricao-anuncio">' + produto[i].DESCRICAO_ANUNCIO + '</p>';
-                    contato += '<p class="contato-anuncio"> Buscar Contato </p>';
-                    vendedor += '<span class="vendedor-anuncio"> Buscar Vendedor </span>';
+                    imagem += '<img class="imagem-anuncio" src="./routines/' + produto[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="Anuncio" loading="lazy">';
+                    descricao += '<span>Descrição do Produto: </span><p class="descricao-anuncio">' + produto[i].DESC_ANUNCIO + '</p>';
+                    contato += '<span>Contato:</span><p class="contato-anuncio"> Buscar Contato </p>';
+                    vendedor += '<span>Anúnciante: </span><p class="vendedor-anuncio"> Buscar Vendedor </p>';
                     nomeProduto = produto[i].NOME_ANUNCIO;
                 }
 
@@ -285,7 +285,7 @@ if (empty($_COOKIE['produtoId'])) {
                 $('#produto-img').append(imagem);
                 $('#produto-descricao').append(descricao, contato, vendedor);
 
-                document.title = nomeProduto + " ATEMPORAL";
+                document.title = nomeProduto + " - ATEMPORAL";
             })
     }
 </script>

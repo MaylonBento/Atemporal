@@ -158,6 +158,8 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    flex-wrap: wrap;
 }
 
 .produto-split{    
@@ -167,13 +169,17 @@ main{
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .produto-img{
-    background-color: white;
     height: 100%;
     width: 100%;
+    border-right: 1px solid lightgray;
+    background-color: white;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .produto-img img{
@@ -185,6 +191,23 @@ main{
 .produto-descricao{
     height: 100%;
     width: 100%;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.produto-descricao span{
+    color: rgb(76, 76, 139);
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.produto-descricao p{
+    color: #555555;
+    font-size: 14pt;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
 }
 
 .nome-anuncio{
@@ -194,20 +217,19 @@ main{
 
 .valor-anuncio{
     background-color: rgb(76, 76, 139);
-    padding: 5px 100px 5px 50px;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    padding: 2px 100px 2px 25px;
     
-    color: antiquewhite;
+    color: white;
     font-size: 26pt;
 }
 
-.produto-data{
-    padding: 5px;
-    margin-top: -30px;
+.produto-data, .produto-data p{
+    margin-top: -15px;
+    padding: 3px;
     font-size: 11pt;
-    color: gray;
+    color: #999999;
 }
+
 
 
 

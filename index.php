@@ -90,7 +90,7 @@ include_once './assets/routines/connection.php';
             <div class="fixed-nav">
                 <div class="shop-name">
                     <a href="index.php">
-                        <img src="./assets/media/logo.png" alt="Atemporal Antiguidades" height="50px" width="auto">
+                        <img src="./assets/media/logo.png" alt="Atemporal Antiguidades" height="50px" width="auto" loading="lazy">
                     </a>
                 </div>
 
@@ -242,22 +242,22 @@ include_once './assets/routines/connection.php';
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <a href="">
-                                <img src="./assets/media/banners/primeiro-big.jpg" class="d-block" alt="..." height="auto" width="100%">
+                                <img src="./assets/media/banners/primeiro-big.jpg" class="d-block" alt="..." height="auto" width="100%" loading="lazy">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./assets/media/banners/segundo-big.jpg" class="d-block" alt="..." height="auto" width="100%">
+                                <img src="./assets/media/banners/segundo-big.jpg" class="d-block" alt="..." height="auto" width="100%" loading="lazy">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./assets/media/banners/terceiro-big.jpg" class="d-block" alt="..." height="auto" width="100%">
+                                <img src="./assets/media/banners/terceiro-big.jpg" class="d-block" alt="..." height="auto" width="100%" loading="lazy">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="">
-                                <img src="./assets/media/banners/quarto-big.jpg" class="d-block" alt="..." height="auto" width="100%">
+                                <img src="./assets/media/banners/quarto-big.jpg" class="d-block" alt="..." height="auto" width="100%" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -414,7 +414,7 @@ include_once './assets/routines/connection.php';
 
                 <!-- Logo e nome da página no Footer -->
                 <div class="footer-logo">
-                    <img src="./assets/media/logo.png" alt="Favicon">
+                    <img src="./assets/media/logo.png" alt="Favicon" loading="lazy">
                 </div>
 
                 <!-- Referencias -->
@@ -523,7 +523,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -546,7 +546,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -569,7 +569,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -592,7 +592,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -615,7 +615,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -638,7 +638,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
@@ -661,7 +661,7 @@ include_once './assets/routines/connection.php';
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
-                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
