@@ -58,16 +58,16 @@ input[type=submit]{
     float: right;
     width: 300px;
     border: none;
-    background-color: rgb(207, 178, 178);
+    background-color: rgb(204, 97, 97);
+    opacity: .6;
     padding: 10px 25px;
     font-size: 16pt;
     color: white;
 }
 
 input[type=submit]:hover{
-    background-color: rgb(204, 97, 97);
     transition: .3s;
-    transform: scale(0.98);
+    opacity: 1;
 }
 
 .anunciosDisponiveis{

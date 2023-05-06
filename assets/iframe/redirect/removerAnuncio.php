@@ -79,7 +79,7 @@ include_once '../../routines/connection.php';
                     lista += '<label for="' + anuncios[i].ID_ANUNCIO + '">';
                     lista += '<li>';
                     lista += '<div class="input-radio"><input type=radio name="itemAnuncio" id="' + anuncios[i].ID_ANUNCIO + '" value="' + anuncios[i].ID_ANUNCIO + '"><p>ID#0' + anuncios[i].ID_ANUNCIO + '</p></div>';
-                    lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="../' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
