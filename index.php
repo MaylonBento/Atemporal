@@ -522,11 +522,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosRecentesUl').append(lista);
@@ -545,11 +547,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosAntigosUl').append(lista);
@@ -568,11 +572,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosColecionaveisUl').append(lista);
@@ -591,11 +597,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosUtensiliosUl').append(lista);
@@ -614,11 +622,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosMoveisUl').append(lista);
@@ -637,11 +647,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosEletronicosUl').append(lista);
@@ -660,11 +672,13 @@ include_once './assets/routines/connection.php';
                 let lista = '';
 
                 for (i = 0; i < anuncios.length; i++) {
-                    lista += '<li onclick=document.cookie="produtoId=' + anuncios[i].ID_ANUNCIO + '";window.location.href="./assets/produto.php">';
+                    lista += '<a href="./assets/produto.php?produtoId=' + anuncios[i].ID_ANUNCIO + '">';
+                    lista += '<li>';
                     lista += '<img src="./assets/routines/' + anuncios[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="' + anuncios[i].NOME_ANUNCIO + '" loading="lazy">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
+                    lista += '</a>';
                 }
 
                 $('#anunciosRoupasUl').append(lista);

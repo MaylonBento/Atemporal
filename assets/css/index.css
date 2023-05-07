@@ -436,9 +436,13 @@ main{
 }
 
 .showcase-recentes span{
-    color: #303030;
+    color: #555555;
     font-size: 14pt;
     margin-top: -15px;
+}
+
+.showcase-recentes a{
+    text-decoration: none;
 }
 
 
@@ -506,9 +510,13 @@ main{
 }
 
 .showcase-antigos span{
-    color: #303030;
+    color: #555555;
     font-size: 16pt;
     margin-top: -15px;
+}
+
+.showcase-antigos a{
+    text-decoration: none;
 }
 
 
@@ -570,9 +578,13 @@ main{
 }
 
 .showcase-melhores span{
-    color: black;
+    color: #555555;
     font-size: 14pt;
     margin-top: -15px;
+}
+
+.showcase-melhores a{
+    text-decoration: none;
 }
 
 

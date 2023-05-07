@@ -1,11 +1,15 @@
 <?php
 include_once './routines/connection.php';
 
-if (empty($_COOKIE['produtoId'])) {
-    header("Location:../index.php");
-} else {
-    $produtoId = $_COOKIE['produtoId'];
-}
+$produtoId = $_GET['produtoId'];
+
+$stmCheckID = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE ID_ANUNCIO=?");
+$stmCheckID->bind_param('s', $produtoId);
+$stmCheckID->execute();
+$stmCheckID->store_result();
+if ($stmCheckID->num_rows < 1) {
+    echo "<script language='javascript' type='text/javascript'>alert('Produto Não Encontrado no DB');window.location.href='../index.php';</script>";
+};
 
 ?>
 
@@ -253,7 +257,7 @@ if (empty($_COOKIE['produtoId'])) {
     function montarProduto() {
         $.ajax({
                 method: 'POST',
-                url: './routines/montarProdutoModal.php',
+                url: './routines/montarProdutoModal.php?produtoId=<?php echo $produtoId?>',
             })
 
             .done(function(resProduto) {
@@ -275,8 +279,8 @@ if (empty($_COOKIE['produtoId'])) {
                     preco += '<span class="valor-anuncio"> R$ ' + produto[i].VALOR_VENDA_ANUNCIO + '</span>';
                     imagem += '<img class="imagem-anuncio" src="./routines/' + produto[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="Anuncio" loading="lazy">';
                     descricao += '<span>Descrição do Produto: </span><p class="descricao-anuncio">' + produto[i].DESC_ANUNCIO + '</p>';
-                    contato += '<span>Contato:</span><p class="contato-anuncio"> Buscar Contato </p>';
-                    vendedor += '<span>Anúnciante: </span><p class="vendedor-anuncio"> Buscar Vendedor </p>';
+                    contato += '<span>Contato:</span><p class="contato-anuncio"> ***(Adicionar: Buscar Contato! Maylon ou Bruno)*** </p>';
+                    vendedor += '<span>Anúnciante: </span><p class="vendedor-anuncio"> ***(Adicionar: Buscar Vendedor! Maylon ou Bruno)*** </p>';
                     nomeProduto = produto[i].NOME_ANUNCIO;
                 }
 
