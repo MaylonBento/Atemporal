@@ -464,6 +464,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
     overflow: auto;
     overflow-y: hidden;

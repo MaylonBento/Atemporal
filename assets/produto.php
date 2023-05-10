@@ -8,7 +8,7 @@ $stmCheckID->bind_param('s', $produtoId);
 $stmCheckID->execute();
 $stmCheckID->store_result();
 if ($stmCheckID->num_rows < 1) {
-    echo "<script language='javascript' type='text/javascript'>alert('Produto Não Encontrado no DB');window.location.href='../index.php';</script>";
+    echo "<script language='javascript' type='text/javascript'>window.location.href='../index.php';</script>";
 };
 
 ?>
@@ -265,29 +265,28 @@ if ($stmCheckID->num_rows < 1) {
 
                 let nome = '';
                 let preco = '';
-                let data = ''
+                let data = '';
                 let imagem = '';
                 let descricao = '';
                 let contato = '';
                 let vendedor = '';
                 let nomeProduto = '';
-                let cookie = 'nomePagina';
 
                 for (i = 0; i < produto.length; i++) {
                     nome += '<span class="nome-anuncio">' + produto[i].NOME_ANUNCIO + '</span>';
-                    data += '<p>Anúnciado em: ' + produto[i].DTA_ANUNCIO + '</p>'
+                    data += '<p>Anúnciado em: ' + produto[i].DTA_ANUNCIO + '</p>';
                     preco += '<span class="valor-anuncio"> R$ ' + produto[i].VALOR_VENDA_ANUNCIO + '</span>';
                     imagem += '<img class="imagem-anuncio" src="./routines/' + produto[i].IMAGEM_ANUNCIO + '?ver=<?php date('his')?>" alt="Anuncio" loading="lazy">';
                     descricao += '<span>Descrição do Produto: </span><p class="descricao-anuncio">' + produto[i].DESC_ANUNCIO + '</p>';
-                    contato += '<span>Contato:</span><p class="contato-anuncio"> ***(Adicionar: Buscar Contato! Maylon ou Bruno)*** </p>';
-                    vendedor += '<span>Anúnciante: </span><p class="vendedor-anuncio"> ***(Adicionar: Buscar Vendedor! Maylon ou Bruno)*** </p>';
+                    contato += '<span>Contato:</span><p class="contato-anuncio">' + produto[i].FONE_VENDEDOR + '</p>';
+                    vendedor += '<span>Anúnciante: </span><p class="vendedor-anuncio">' + produto[i].NOME_VENDEDOR + '</p>';
                     nomeProduto = produto[i].NOME_ANUNCIO;
                 }
 
                 $('#produto-bloco').append(nome, preco);
                 $('#produto-data').append(data);
                 $('#produto-img').append(imagem);
-                $('#produto-descricao').append(descricao, contato, vendedor);
+                $('#produto-descricao').append(descricao, vendedor, contato);
 
                 document.title = nomeProduto + " - ATEMPORAL";
             })
