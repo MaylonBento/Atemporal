@@ -1,3 +1,9 @@
+<?php
+
+include_once './routines/connection.php';
+include_once './routines/verTudo/todosProdutosModal.php';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="./css/verTudo.css">
+    <link rel="stylesheet" href="./css/verTudo.css?ver=<?= Date('his') ?>">
 
 
 
@@ -174,10 +180,38 @@
 
             </div> -->
 
-            <div class="products-showcase">
-                <ul id="todosProdutosUl"></ul>
+
+            <div class="products-showcase-bg">
+                <div class="row-tittle">
+                    <span>PRODUTOS</span>
+                    <p>TODOS OS POODUTOS PARA VOCÊ ESCOLHER!</p>
+                    <section></section>
+                </div>
+
+
+                <div class="products-showcase">
+                    <div class="showcase-melhores">
+                        <ul id="todosProdutosUl"></ul>
+                    </div>
+
+                    <a href="?pagina=1">Inicio -- </a>
+
+                    <a href="?pagina=<?=$pagina-1?>">Anterior</a>
+
+
+                    <?=$pagina?>
+
+
+                    <a href="?pagina=<?=$pagina+1?>">Próxima</a>
+                    
+                    
+
+
+                    <!--<button type="submite" onclick="Anterior()">Anterior</button>
+                    <button type="submite" onclick="Proxima()">Proxima</button> -->
+                </div>
+
             </div>
-        </div>
 
 
 
@@ -258,7 +292,7 @@
 
                 for (i = 0; i < anuncios.length; i++) {
                     lista += '<li>';
-                    lista += '<img src="./routines/verTudo' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
+                    lista += '<img src="./routines/' + anuncios[i].IMAGEM_ANUNCIO + '" alt="Anuncio">';
                     lista += '<p>' + anuncios[i].NOME_ANUNCIO + '</p>';
                     lista += '<span>R$ ' + anuncios[i].VALOR_VENDA_ANUNCIO + '</span>';
                     lista += '</li>';
