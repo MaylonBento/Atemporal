@@ -1,7 +1,9 @@
 <?php
-
-include_once './routines/connection.php';
-include_once './routines/verTudo/todosProdutosModal.php';
+ $pagina = $_GET['pagina'];
+ $rewind = ($pagina-1);
+ if ($pagina <= 0) {
+    header('Location: verTudo.php?pagina=1');
+ }
 ?>
 
 <!doctype html>
@@ -22,7 +24,7 @@ include_once './routines/verTudo/todosProdutosModal.php';
 
 
     <!-- Nome da Página -->
-    <title>Produtos - ATEMPORAL</title>
+    <title>Todos os Produtos - ATEMPORAL</title>
 
     <!-- Ícone da Página -->
     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
@@ -196,19 +198,13 @@ include_once './routines/verTudo/todosProdutosModal.php';
 
                     <a href="?pagina=1">Inicio -- </a>
 
-                    <a href="?pagina=<?=$pagina-1?>">Anterior</a>
+                    <a href="?pagina=<?=$pagina-1?>" id="backwards">Anterior</a>
 
 
                     <?=$pagina?>
 
 
-                    <a href="?pagina=<?=$pagina+1?>">Próxima</a>
-                    
-                    
-
-
-                    <!--<button type="submite" onclick="Anterior()">Anterior</button>
-                    <button type="submite" onclick="Proxima()">Proxima</button> -->
+                    <a href="?pagina=<?=$pagina+1?>" id="foward">Próxima</a>
                 </div>
 
             </div>
@@ -280,13 +276,24 @@ include_once './routines/verTudo/todosProdutosModal.php';
 
 <script>
     function todosProdutos() {
+        const URL = window.location.search;
+        const urlParams = new URLSearchParams(URL);
+
+        if (urlParams.get('pagina') == 1) {
+            $('#backwards').remove();
+        }
+
         $.ajax({
                 method: 'POST',
-                url: './routines/verTudo/todosProdutosModal.php',
+                url: './routines/verTudo/todosProdutosModal.php?pagina=<?php echo $_GET['pagina']?>',
             })
 
             .done(function(anunciosAtivos) {
                 anuncios = JSON.parse(anunciosAtivos);
+
+                if (anuncios.length <= 5) {
+                    window.location.href = "verTudo.php?pagina=<?php echo $rewind;?>";
+                }
 
                 let lista = '';
 

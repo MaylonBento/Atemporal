@@ -1,7 +1,7 @@
 <?php
 include_once '../connection.php';
 
-$pagina = 1;
+$pagina = $_GET['pagina'];
 
 $limite = 6;
 
