@@ -1,9 +1,8 @@
 <?php
 $pagina = $_GET['pagina'];
-$categoria = $_GET['categoria'];
 $rewind = ($pagina - 1);
 if ($pagina <= 0) {
-    header('Location: verTudo.php?pagina=1');
+    header('Location: colecionaveis.php?pagina=1');
 }
 ?>
 
@@ -20,12 +19,12 @@ if ($pagina <= 0) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- CSS do Index -->
-    <link rel="stylesheet" href="./css/verTudo.css?ver=<?= Date('his') ?>">
+    <link rel="stylesheet" href="./css/colecionaveis.css?ver=<?= Date('his') ?>">
 
 
 
     <!-- Nome da Página -->
-    <title>Todos os Produtos - ATEMPORAL</title>
+    <title>Colecionaveis - ATEMPORAL</title>
 
     <!-- Ícone da Página -->
     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
@@ -38,7 +37,7 @@ if ($pagina <= 0) {
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="todosProdutos()">
+<body onload="todosColecionaveis()">
     <header>
 
         <!-- Redes Sociais / Área do Cliente -->
@@ -263,14 +262,14 @@ if ($pagina <= 0) {
             <div class="products-showcase-bg">
                 <div class="row-tittle">
                     <span>PRODUTOS</span>
-                    <p>TODOS OS PRODUTOS PARA VOCÊ ESCOLHER!</p>
+                    <p>TODOS OS COLECIONÁVEIS PARA VOCÊ ESCOLHER!</p>
                     <section></section>
                 </div>
 
 
                 <div class="products-showcase">
                     <div class="showcase-melhores">
-                        <ul id="todosProdutosUl"></ul>
+                        <ul id="todosColecionaveisUl"></ul>
                     </div>
 
                     <a href="?pagina=1">Inicio -- </a>
@@ -352,7 +351,7 @@ if ($pagina <= 0) {
 
 
 <script>
-    function todosProdutos() {
+    function todosColecionaveis() {
         const URL = window.location.search;
         const urlParams = new URLSearchParams(URL);
 
@@ -362,13 +361,15 @@ if ($pagina <= 0) {
 
         $.ajax({
                 method: 'POST',
-                url: './routines/verTudo/todosProdutosModal.php?pagina=<?php echo $_GET['pagina'] ?>&categoria=<?php echo $_GET['categoria'] ?>',
+                url: './routines/verTudo/todosColecionaveisModal.php?pagina=<?php echo $_GET['pagina'] ?>',
             })
 
             .done(function(anunciosAtivos) {
                 anuncios = JSON.parse(anunciosAtivos);
 
-
+                /* if (anuncios.length <= 5) {
+                    window.location.href = "colecionaveis.php?pagina=<?php echo $rewind; ?>";
+                } */
 
                 let lista = '';
 
@@ -382,7 +383,7 @@ if ($pagina <= 0) {
                     lista += '</a>';
                 }
 
-                $('#todosProdutosUl').append(lista);
+                $('#todosColecionaveisUl').append(lista);
             })
     }
 </script>

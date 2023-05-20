@@ -300,8 +300,8 @@ main{
 }
 
 .showcase-melhores ul{
-    width: 1150px;
-    height: auto;
+    width: 100%;
+    height: 300px;
     padding: 20px 10px;
     border-radius: 1rem;
     background-color: white;
@@ -309,12 +309,11 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .showcase-melhores li{
     height: 100%;
-    width: 300px;
+    width: 170px;
     margin: 5px;
     border: 1px solid lightgray;
     padding: 10px;
@@ -335,8 +334,8 @@ main{
 }
 
 .showcase-melhores img{
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
 
     background: white;
     object-fit: contain;
