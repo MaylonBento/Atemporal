@@ -15,7 +15,8 @@ if (!$pagina)
     $pagina = 1;
 
 
-$stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE CATEGORIA_ANUNCIO='$categoria' ORDER BY ID_ANUNCIO ASC LIMIT $inicio, $limite");
+$stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE CATEGORIA_ANUNCIO='colecionaveis' ORDER BY ID_ANUNCIO LIMIT=?,?");
+$stmAnuncios->bind_param($inicio, $limite);
 if ($stmAnuncios->execute()) {
     $res = $stmAnuncios->get_result();
     $row = $res->fetch_all(MYSQLI_ASSOC);
