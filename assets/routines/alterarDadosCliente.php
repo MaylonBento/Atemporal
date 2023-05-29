@@ -19,19 +19,23 @@ $caminho = $pasta . md5($sessaoUsuario);
 if (isset($_POST['saveBtn'])) {
     $stmAlter = $connection->prepare("UPDATE TB_CLIENTE SET FONE_CLIENTE=? WHERE EMAIL_CLIENTE=?");
     $stmAlter->bind_param('ss', $novoTelefone, $sessaoUsuario);
-    $stmAlter->execute();
 
-    if (@move_uploaded_file($arqTemp, $caminho)) {
+    if ($stmAlter->execute()) {
+        if (!empty($arqTemp)) {
+            unlink($caminho);
+            @move_uploaded_file($arqTemp, $caminho);
+        }
+
         $stmFoto = $connection->prepare("UPDATE TB_CLIENTE SET IMAGEM_CLIENTE=? WHERE EMAIL_CLIENTE=?");
         $stmFoto->bind_param('ss', $caminho, $sessaoUsuario);
-        $stmFoto->execute();
 
-        echo "<script language='javascript' type='text/javascript'>alert('Seus dados foram alterados com sucesso!');window.location.href='../iframe/dadosCliente.php';</script>";
+        if ($stmFoto->execute()) {
+            echo "<script language='javascript' type='text/javascript'>alert('Seus dados foram alterados com sucesso!');window.location.href='../iframe/dadosCliente.php';</script>";
+        } else {
+            echo "<script language='javascript' type='text/javascript'>alert('Falha ao fazer o Upload da Imagem do Usuário');window.location.href='../iframe/dadosCliente.php';</script>";
+        }
     } else {
-        echo "<script language='javascript' type='text/javascript'>alert('Seus dados foram alterados com sucesso!');window.location.href='../iframe/dadosCliente.php';</script>";
+        echo "<script language='javascript' type='text/javascript'>alert('Falha ao Atualizar os Dados do Usuário');window.location.href='../iframe/dadosCliente.php';</script>";
+        exit();
     }
-} else {
-    echo "<script language='javascript' type='text/javascript'>alert('Algo de errado aconteceu!');window.location.href='../iframe/dadosCliente.php';</script>";
-    exit();
 }
-?>

@@ -253,7 +253,7 @@ main{
 .products-showcase-bg{
     width: 100%;
     height: auto;
-    margin-top: 41px;
+    margin-top: 61px;
 
     display: flex;
     flex-direction: column;
@@ -319,6 +319,7 @@ main{
     border: 1px solid lightgray;
     padding: 10px;
     background-color: #eeeeee;
+    margin-bottom: 40px;
 
     list-style: none;
     font-size: 12pt;

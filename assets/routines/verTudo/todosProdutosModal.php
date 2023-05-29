@@ -14,17 +14,30 @@ if (isset($_GET['pagina']))
 if (!$pagina)
     $pagina = 1;
 
-
-$stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE CATEGORIA_ANUNCIO='colecionaveis' ORDER BY ID_ANUNCIO LIMIT=?,?");
-$stmAnuncios->bind_param($inicio, $limite);
-if ($stmAnuncios->execute()) {
-    $res = $stmAnuncios->get_result();
-    $row = $res->fetch_all(MYSQLI_ASSOC);
-
-    $resultadoJSON = json_encode($row);
-    echo $resultadoJSON;
+if ($categoria != 'todos') {
+    $stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO WHERE CATEGORIA_ANUNCIO=? ORDER BY ID_ANUNCIO LIMIT ?,?");
+    $stmAnuncios->bind_param('sss', $categoria, $inicio, $limite);
+    if ($stmAnuncios->execute()) {
+        $res = $stmAnuncios->get_result();
+        $row = $res->fetch_all(MYSQLI_ASSOC);
+    
+        $resultadoJSON = json_encode($row);
+        echo $resultadoJSON;
+    } else {
+        return;
+    }
 } else {
-    return;
+    $stmAnuncios = $connection->prepare("SELECT*FROM TB_ANUNCIO ORDER BY ID_ANUNCIO LIMIT ?,?");
+    $stmAnuncios->bind_param('ss', $inicio, $limite);
+    if ($stmAnuncios->execute()) {
+        $res = $stmAnuncios->get_result();
+        $row = $res->fetch_all(MYSQLI_ASSOC);
+    
+        $resultadoJSON = json_encode($row);
+        echo $resultadoJSON;
+    } else {
+        return;
+    }
 }
 
 ?>
