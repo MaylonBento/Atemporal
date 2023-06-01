@@ -121,12 +121,32 @@ header{
 }
 
 .search-field{
-    height: 100%;
+    height: 48px;
     width: 70%;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 0px 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.search-field input[type=text]{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-left: 15px;
+    font-size: 15pt;
+    width: 100%;
+}
+
+form{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -199,7 +219,7 @@ header{
 }
 
 .categories span{
-    color: white;
+    color: #303030;
     font-weight: bold;
 }
 
@@ -253,7 +273,7 @@ main{
 .products-showcase-bg{
     width: 100%;
     height: auto;
-    margin-top: 61px;
+    margin-top: 70px;
 
     display: flex;
     flex-direction: column;
@@ -280,6 +300,26 @@ main{
     color: black;
 }
 
+.paginacao{
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.paginacao a{
+    margin-right: 10px;
+}
+
+.paginacao span{
+    font-size: 12pt;
+    margin-right: 10px;
+    color: #303030;
+}
+
 
 
 .products-showcase{
@@ -300,7 +340,8 @@ main{
 }
 
 .showcase-melhores ul{
-    width: 1150px;
+    width: auto;
+    max-width: 1150px;
     height: auto;
     padding: 20px 10px;
     border-radius: 1rem;
@@ -308,13 +349,14 @@ main{
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .showcase-melhores li{
     height: 100%;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 5px;
     border: 1px solid lightgray;
     padding: 10px;
@@ -349,6 +391,7 @@ main{
     font-size: 12pt;
     overflow: hidden;
     height: 24px;
+    width: 300px;
     text-align: center;
 }
 
@@ -356,6 +399,8 @@ main{
     color: #555555;
     font-size: 12pt;
     margin-top: -15px;
+    width: 300px;
+    text-align: center;
 }
 
 .showcase-produtos a{

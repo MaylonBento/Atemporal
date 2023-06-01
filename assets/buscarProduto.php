@@ -1,9 +1,9 @@
 <?php
 $pagina = $_GET['pagina'];
-$categoria = $_GET['categoria'];
+$pesquisa = $_GET['pesquisa'];
 $rewind = ($pagina - 1);
 if ($pagina <= 0) {
-    header("Location: verTudo.php?pagina=1&categoria='$categoria'");
+    header("Location: verTudo.php?pagina=1&pesquisa='$pesquisa'");
 }
 ?>
 
@@ -269,15 +269,15 @@ if ($pagina <= 0) {
                 </div>
 
                 <div class="paginacao">
-                    <a href="?pagina=1&categoria=<?= $categoria ?>">Inicio -- </a>
+                    <a href="?pagina=1&pesquisa=<?= $pesquisa ?>">Inicio -- </a>
 
-                    <a href="?pagina=<?= $pagina - 1 ?>&categoria=<?= $categoria ?>" class="backwards">Anterior</a>
+                    <a href="?pagina=<?= $pagina - 1 ?>&pesquisa=<?= $pesquisa ?>" class="backwards">Anterior</a>
 
 
                     <span><?= $pagina ?></span>
 
 
-                    <a href="?pagina=<?= $pagina + 1 ?>&categoria=<?= $categoria ?>" id="foward">Próxima</a>
+                    <a href="?pagina=<?= $pagina + 1 ?>&pesquisa=<?= $pesquisa ?>" class="foward">Próxima</a>
                 </div>
             </div>
 
@@ -288,15 +288,15 @@ if ($pagina <= 0) {
             </div>
 
             <div class="paginacao">
-                <a href="?pagina=1&categoria=<?= $categoria ?>">Inicio -- </a>
+                <a href="?pagina=1&pesquisa=<?= $pesquisa ?>">Inicio -- </a>
 
-                <a href="?pagina=<?= $pagina - 1 ?>&categoria=<?= $categoria ?>" class="backwards">Anterior</a>
+                <a href="?pagina=<?= $pagina - 1 ?>&pesquisa=<?= $pesquisa ?>" class="backwards">Anterior</a>
 
 
                 <span><?= $pagina ?></span>
 
 
-                <a href="?pagina=<?= $pagina + 1 ?>&categoria=<?= $categoria ?>" id="foward">Próxima</a>
+                <a href="?pagina=<?= $pagina + 1 ?>&pesquisa=<?= $pesquisa ?>" class="foward">Próxima</a>
             </div>
 
         </div>
@@ -307,6 +307,8 @@ if ($pagina <= 0) {
 
 
     <footer>
+
+
 
         <div class="footer-bg">
 
@@ -394,7 +396,7 @@ if ($pagina <= 0) {
 
         $.ajax({
                 method: 'POST',
-                url: './routines/verTudo/todosProdutosModal.php?pagina=<?php echo $_GET['pagina'] ?>&categoria=<?php echo $_GET['categoria'] ?>',
+                url: './routines/buscarProdutoModal.php?pagina=<?php echo $_GET['pagina'] ?>&pesquisa=<?php echo $_GET['pesquisa'] ?>',
             })
 
             .done(function(anunciosAtivos) {

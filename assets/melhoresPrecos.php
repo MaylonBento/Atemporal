@@ -97,15 +97,14 @@ if ($pagina <= 0) {
                 </div>
 
                 <div class="search-field">
-                    <form action="buscarProduto.php" method="get">
-                        <input type="hidden" value="1" name="pagina">
-                        <input type="text" placeholder="O que esta procurando?" aria-label="O que esta procurando?" aria-describedby="button-addon2" name="pesquisa">
-                        <button class="btn btn-light btn-outline-silent" type="submit" id="button-addon2">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="O que esta procurando?" aria-label="O que esta procurando?" aria-describedby="button-addon2">
+                        <button class="btn btn-light btn-outline-silent" type="button" id="button-addon2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
                         </button>
-                    </form>
+                    </div>
                 </div>
 
                 <div class="user-login">
@@ -268,38 +267,24 @@ if ($pagina <= 0) {
                     <section></section>
                 </div>
 
-                <div class="paginacao">
-                    <a href="?pagina=1&categoria=<?= $categoria ?>">Inicio -- </a>
 
-                    <a href="?pagina=<?= $pagina - 1 ?>&categoria=<?= $categoria ?>" class="backwards">Anterior</a>
+                <div class="products-showcase">
+                    <div class="showcase-melhores">
+                        <ul id="todosProdutosUl"></ul>
+                    </div>
+
+                    <a href="?pagina=1">Inicio -- </a>
+
+                    <a href="?pagina=<?= $pagina - 1 ?>&categoria=<?= $categoria?>" id="backwards">Anterior</a>
 
 
-                    <span><?= $pagina ?></span>
+                    <?= $pagina ?>
 
 
-                    <a href="?pagina=<?= $pagina + 1 ?>&categoria=<?= $categoria ?>" id="foward">Próxima</a>
+                    <a href="?pagina=<?= $pagina + 1 ?>&categoria=<?= $categoria?>" id="foward">Próxima</a>
                 </div>
+
             </div>
-
-            <div class="products-showcase">
-                <div class="showcase-melhores">
-                    <ul id="todosProdutosUl"></ul>
-                </div>
-            </div>
-
-            <div class="paginacao">
-                <a href="?pagina=1&categoria=<?= $categoria ?>">Inicio -- </a>
-
-                <a href="?pagina=<?= $pagina - 1 ?>&categoria=<?= $categoria ?>" class="backwards">Anterior</a>
-
-
-                <span><?= $pagina ?></span>
-
-
-                <a href="?pagina=<?= $pagina + 1 ?>&categoria=<?= $categoria ?>" id="foward">Próxima</a>
-            </div>
-
-        </div>
 
 
 
@@ -309,23 +294,6 @@ if ($pagina <= 0) {
     <footer>
 
         <div class="footer-bg">
-
-            <!-- Voltar ao Topo -->
-            <a href="#top" id="back-to-top">
-                <div class="to-top">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" />
-                        </svg>
-                        Voltar ao Topo
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" />
-                        </svg>
-                    </span>
-                </div>
-            </a>
 
             <!-- Resto-->
             <div class="rest">
@@ -389,7 +357,7 @@ if ($pagina <= 0) {
         const urlParams = new URLSearchParams(URL);
 
         if (urlParams.get('pagina') == 1) {
-            $('.backwards').remove();
+            $('#backwards').remove();
         }
 
         $.ajax({
