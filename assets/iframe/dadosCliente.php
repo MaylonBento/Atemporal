@@ -122,8 +122,8 @@ session_start();
         <div class="meus-dados-bg">
             <form method="POST" action="../routines/alterarDadosCliente.php" enctype="multipart/form-data">
                 <div class="foto-usuario">
-                    <img src="<?= $imagemUsuario ?>" alt="Foto de Perfil" name="fotoPerfil">
-                    <input type="file" id="alterarFoto" name="alterarFoto" value="">
+                    <img src="<?= $imagemUsuario ?>" alt="Foto de Perfil" name="fotoPerfil" id="fotoPerfil">
+                    <input type="file" id="alterarFoto" name="alterarFoto" value="" accept="image/png, image/jpeg" onchange="trocarFoto()">
                 </div>
 
                 <div class="dados-usuario">
@@ -171,6 +171,13 @@ session_start();
         const foneValue = fone.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
         fone.value = foneValue;
     });
+
+    const alterarFoto = document.getElementById('alterarFoto');
+    const fotoPerfil = document.getElementById('fotoPerfil');
+
+    function trocarFoto(){
+        fotoPerfil.setAttribute("src", window.URL.createObjectURL(alterarFoto.files[0]));
+    }
 </script>
 
 </html>

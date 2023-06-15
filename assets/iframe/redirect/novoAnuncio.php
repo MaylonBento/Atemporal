@@ -39,7 +39,8 @@
                 <div class="input-row">
                     <span class="mb-2">Imagem do Produto</span>
                     <div class="foto-usuario">
-                        <input type="file" id="fotoAnuncio" name="fotoAnuncio" value="" required>
+                        <input type="file" id="fotoAnuncio" name="fotoAnuncio" value="" accept="image/png, image/jpeg" required onchange="trocarFoto()">
+                        <img src="" alt="" id="fotoProduto">
                     </div>
                 </div>
 
@@ -88,6 +89,14 @@
 
         precoAnuncio.value = precoValue.toFixed(2);
     });
+
+    const alterarFoto = document.getElementById('fotoAnuncio');
+    const fotoPerfil = document.getElementById('fotoProduto');
+
+    function trocarFoto(){
+        fotoPerfil.setAttribute("src", window.URL.createObjectURL(alterarFoto.files[0]));
+        fotoPerfil.style.display="block";
+    }
 </script>
 
 </html>

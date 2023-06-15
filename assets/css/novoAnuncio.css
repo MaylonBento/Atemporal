@@ -74,3 +74,22 @@ input[type=submit]:hover{
     transition: .3s;
     transform: scale(0.98);
 }
+
+.foto-usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foto-usuario img{
+    height: 100px;
+    width: 100px;
+
+    object-fit: contain;
+
+}
+
+#fotoProduto{
+    display: none;
+    margin-top: 20px;
+}
