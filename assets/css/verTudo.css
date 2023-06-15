@@ -149,6 +149,15 @@ form{
     justify-content: space-between;
 }
 
+main{
+    height: auto;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 
 
