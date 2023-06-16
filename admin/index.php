@@ -84,9 +84,12 @@
                 </div>
             </div>
         </div>
+    </header>
 
 
 
+
+    <main>
         <!-- Barra de Navegação Fixa -->
         <div class="fixed-nav-bg">
             <div class="fixed-nav">
@@ -97,17 +100,15 @@
                 </div>
 
                 <div class="search-field">
-                    <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="O que esta procurando?"
-                            aria-label="O que esta procurando?" aria-describedby="button-addon2">
-                        <button class="btn btn-light btn-outline-silent" type="button" id="button-addon2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    <form action="../assets/buscarProduto.php" method="get" class="search-form">
+                        <input type="hidden" value="1" name="pagina">
+                        <input type="text" placeholder="O que esta procurando?" aria-label="O que esta procurando?" aria-describedby="button-addon2" name="pesquisa">
+                        <button class="btn btn-light btn-outline-silent" type="submit" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
                 <div class="user-login">
@@ -170,14 +171,6 @@
                 </div>
             </div>
         </div>
-
-
-    </header>
-
-
-
-
-    <main>
 
         <div class="login-bg">
             <div class="login-pre">

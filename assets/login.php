@@ -92,7 +92,7 @@ include_once './routines/comLogin.php';
                 </div>
 
                 <div class="search-field">
-                    <form action="buscarProduto.php" method="get">
+                    <form action="buscarProduto.php" method="get" class="search-form">
                         <input type="hidden" value="1" name="pagina">
                         <input type="text" placeholder="O que esta procurando?" aria-label="O que esta procurando?" aria-describedby="button-addon2" name="pesquisa">
                         <button class="btn btn-light btn-outline-silent" type="submit" id="button-addon2">
